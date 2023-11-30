@@ -1,17 +1,44 @@
-@media only screen and (min-width: 1920px) {
-}
+@media only screen and (min-width: 1920px) {}
 
-@media only screen and (min-width: 1400px) {
-}
+@media only screen and (min-width: 1400px) {}
 
 @media only screen and (max-width: 1280px) {
+    .logo-nav_links-wrapper {
+        gap: 0px 100px;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
+    .logo-nav_links-wrapper {
+        gap: 0px 50px;
+
+        .nav_links-wrapper {
+            .navbar {
+                gap: 0px 25px;
+                color: #fff;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    .logo-nav_links-wrapper {
+        .nav_links-wrapper {
+            display: none;
+        }
+    }
+
+    .search-wrapper {
+        width: 240px;
+    }
+
+    .sidenav-icon-wrapper {
+        display: block;
+    }
+
+    .sidenav-mobile-wrapper {
+        display: flex;
+    }
 }
 
-@media only screen and (max-width: 320px) {
-}
+@media only screen and (max-width: 320px) {}
