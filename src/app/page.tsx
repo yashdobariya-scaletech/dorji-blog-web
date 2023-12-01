@@ -15,7 +15,6 @@ export default function Home() {
                                 <a
                                     href="#"
                                     className="nav-links pt-10 pb-10"
-                                    id="#"
                                 >
                                     Home
                                 </a>
@@ -40,6 +39,7 @@ export default function Home() {
                             </nav>
                         </div>
                     </div>
+
                     <div className="search-wrapper d-flex justify-content-space-between align-items-center pt-10 pb-10 pl-20 pr-20 border-radius-15 d-flex">
                         <input
                             type="text"
@@ -64,6 +64,18 @@ export default function Home() {
                         <li className="sidenav-links">About Me</li>
                         <li className="sidenav-links">Contact Me</li>
                     </ul>
+                </div>
+            </div>
+            <div className="top-banner-section pt-85">
+                <div className="welcome-title-slide-wrapper full-width full-height d-flex">
+                    <div className="welcome-section-wrapper full-width d-flex align-items-center full-height flex-direction--column pt-120">
+                        <p className="welcome-text font-size-24 font-weight--400 text-align--center">
+                            Welcome to
+                        </p>
+                        <p className="mannkibata-text font-size-60 font-weight--700">
+                            #MannKiBata
+                        </p>
+                    </div>
                 </div>
             </div>
         </>
