@@ -121,3 +121,63 @@ export const CloseIcon: React.FC<Props> = (props) => (
         ></line>
     </svg>
 );
+
+export const CalendarIcon: React.FC<Props> = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+    >
+        <g
+            opacity="0.6"
+            clip-path="url(#clip0_54_190)"
+        >
+            <path
+                d="M2.66669 4.66666C2.66669 4.31304 2.80716 3.9739 3.05721 3.72385C3.30726 3.4738 3.6464 3.33333 4.00002 3.33333H12C12.3536 3.33333 12.6928 3.4738 12.9428 3.72385C13.1929 3.9739 13.3334 4.31304 13.3334 4.66666V12.6667C13.3334 13.0203 13.1929 13.3594 12.9428 13.6095C12.6928 13.8595 12.3536 14 12 14H4.00002C3.6464 14 3.30726 13.8595 3.05721 13.6095C2.80716 13.3594 2.66669 13.0203 2.66669 12.6667V4.66666Z"
+                stroke="#D4DAE6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+            <path
+                d="M10.6667 2V4.66667"
+                stroke="#D4DAE6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+            <path
+                d="M5.33331 2V4.66667"
+                stroke="#D4DAE6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+            <path
+                d="M2.66669 7.33333H13.3334"
+                stroke="#D4DAE6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+            <path
+                d="M5.33331 10H6.66665V11.3333H5.33331V10Z"
+                stroke="#D4DAE6"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </g>
+        <defs>
+            <clipPath id="clip0_54_190">
+                <rect
+                    width="16"
+                    height="16"
+                    fill="white"
+                />
+            </clipPath>
+        </defs>
+    </svg>
+);

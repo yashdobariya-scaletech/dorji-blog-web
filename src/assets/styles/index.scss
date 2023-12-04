@@ -21,7 +21,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #eb3c5b;
+  background: #B3BCCA;
 }
 
 .logo-nav_links-wrapper {
@@ -137,5 +137,110 @@ a {
         }
       }
     }
+
+    .slider-content-wrapper {
+      gap: 50px;
+      color: #fff;
+      margin: 0px 0px 56px 200px;
+
+      .feature-blog-wrapper {
+        gap: 20px;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        .feature-design {
+          width: 2px;
+          height: 100px;
+          writing-mode: vertical-lr;
+          background-color: #0243C1;
+        }
+      }
+
+      .blog-slider-description {
+        gap: 10px;
+
+        .double-quotes {
+          color: #0243C1;
+          font-size: 60px;
+          line-height: 45px;
+        }
+      }
+
+    }
   }
+}
+
+.blog-tabs-content-section {
+  gap: 60px;
+
+  .blog-tabs-wrapper {
+    .tabs-list-wrapper {
+      gap: 80px;
+
+      .tabs-list {
+        .list {
+          color: #B3BCCA;
+          font-size: 26px;
+          font-weight: 600;
+
+          &:active {
+            color: #0F1A2E;
+          }
+        }
+      }
+
+    }
+  }
+
+  .blogs-wrapper {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: auto auto auto auto;
+
+    .blog-content-wrapper {
+      width: 100%;
+      height: 400px;
+
+      .content-description-wrapper {
+        background: rgba(0, 0, 0, 0.50);
+
+        .blog-type-wrapper {
+          padding: 10px;
+
+          .blog-type-text {
+            height: 29px;
+            width: 62px;
+            color: #fff;
+            background: #0243C1;
+          }
+        }
+
+        .blog-title {
+          color: #fff;
+          text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.20);
+        }
+
+        .date-wrapper {
+          height: 50px;
+          background: rgba(0, 0, 0, 0.60);
+
+          .icon-date-time-wrapper {
+            gap: 10px;
+            color: #D4DAE6;
+
+            .date-text {
+              color: #D4DAE6;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.interested-section {
+  background-color: #D4DAE6;
+  height: 198px;
+
+  .text-interested-wrapper {}
 }

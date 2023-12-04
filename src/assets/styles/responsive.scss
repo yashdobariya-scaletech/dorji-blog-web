@@ -6,6 +6,26 @@
     .logo-nav_links-wrapper {
         gap: 0px 100px;
     }
+
+    .top-banner-section {
+        .welcome-title-slide-wrapper {
+            .slider-content-wrapper {
+                margin: 0px 0px 56px 20px;
+            }
+        }
+    }
+
+    .blog-tabs-content-section {
+        .blog-tabs-wrapper {
+            .tabs-list-wrapper {
+                .tabs-list {
+                    .list {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -16,6 +36,14 @@
             .navbar {
                 gap: 0px 25px;
                 color: #fff;
+            }
+        }
+    }
+
+    .blog-tabs-content-section {
+        .blog-tabs-wrapper {
+            .tabs-list-wrapper {
+                gap: 40px;
             }
         }
     }

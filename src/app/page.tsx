@@ -1,4 +1,11 @@
-import { CloseIcon, Logo, MenuIcon, SearchIcon } from "@/assets/icons/icon";
+import {
+    CalendarIcon,
+    CloseIcon,
+    Logo,
+    MenuIcon,
+    SearchIcon,
+} from "@/assets/icons/icon";
+import Culture from "../assets/images/rectangle-31.png";
 import Image from "next/image";
 
 export default function Home() {
@@ -67,7 +74,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="top-banner-section pt-85">
-                <div className="welcome-title-slide-wrapper full-width full-height d-flex">
+                <div className="welcome-title-slide-wrapper full-width full-height d-flex justify-content-space-between align-items-start flex-direction--column">
                     <div className="welcome-section-wrapper full-width d-flex align-items-center full-height flex-direction--column pt-120">
                         <p className="welcome-text font-size-24 font-weight--400 text-align--center">
                             Welcome to
@@ -76,6 +83,337 @@ export default function Home() {
                             #MannKiBata
                         </p>
                     </div>
+                    <div className="slider-content-wrapper d-flex align-items-end justify-content--center">
+                        <div className="feature-blog-wrapper d-flex align-items-center">
+                            <p className="feature-text">Featured Blogs</p>
+                            <div className="feature-design"></div>
+                        </div>
+                        <div className="blog-slider-description d-flex justify-content--center align-items-end">
+                            <p className="slider-description-text">
+                                Bless me into <span>Usefulness</span> . <br />
+                                May you all be blessed into Usefulness.
+                            </p>
+                            <p className="double-quotes d-flex justify-content--center align-items-end">
+                                ”
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130">
+                <div className="blog-tabs-wrapper d-flex">
+                    <ul className="tabs-list-wrapper d-flex">
+                        <li className="tabs-list">
+                            <a className="list">All</a>
+                        </li>
+                        <li className="tabs-list">
+                            <a className="list">Culture</a>
+                        </li>
+                        <li className="tabs-list">
+                            <a className="list">Food</a>
+                        </li>
+                        <li className="tabs-list">
+                            <a className="list">Festivals</a>
+                        </li>
+                        <li className="tabs-list">
+                            <a className="list">History</a>
+                        </li>
+                        <li className="tabs-list">
+                            <a className="list">Local Stories</a>
+                        </li>
+                        <li className="tabs-list">
+                            <a className="list">My Work</a>
+                        </li>
+                    </ul>
+                </div>
+                <div className="blogs-wrapper full-width">
+                    <div className="blog-content-wrapper position--relative">
+                        <Image
+                            src={Culture}
+                            // width={100}
+                            height={400}
+                            alt="Culture"
+                        />
+                        <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
+                            <div className="blog-type-wrapper full-width d-flex align-items-center justify-content-end">
+                                <p
+                                    className="blog-type-text border-radius-10 font-weight--400 d-flex
+                                    align-items-center justify-content--center font-size-12"
+                                >
+                                    Culture
+                                </p>
+                            </div>
+                            <div className="blog-title-date-wrapper">
+                                <h2 className="blog-title font-size-30 pl-10 pr-10 font-weight--800 line-height-40">
+                                    Chumphu Nye - Between sky & earth
+                                </h2>
+                                <div className="date-wrapper d-flex align-items-center justify-content--flex-start pl-10 pr-10">
+                                    <div className="icon-date-time-wrapper d-flex align-items-center justify-content--center">
+                                        <CalendarIcon />
+                                        <p className="date-text font-size-16 font-weight--400">
+                                            Nov 27, 2023
+                                        </p>
+                                        /
+                                        <p className="reade-time-text">
+                                            2 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="blog-content-wrapper position--relative">
+                        <Image
+                            src={Culture}
+                            // width={100}
+                            height={400}
+                            alt="Culture"
+                        />
+                        <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
+                            <div className="blog-type-wrapper full-width d-flex align-items-center justify-content-end">
+                                <p
+                                    className="blog-type-text border-radius-10 font-weight--400 d-flex
+                                    align-items-center justify-content--center font-size-12"
+                                >
+                                    Culture
+                                </p>
+                            </div>
+                            <div className="blog-title-date-wrapper">
+                                <h2 className="blog-title font-size-30 pl-10 pr-10 font-weight--800 line-height-40">
+                                    Chumphu Nye - Between sky & earth
+                                </h2>
+                                <div className="date-wrapper d-flex align-items-center justify-content--flex-start pl-10 pr-10">
+                                    <div className="icon-date-time-wrapper d-flex align-items-center justify-content--center">
+                                        <CalendarIcon />
+                                        <p className="date-text font-size-16 font-weight--400">
+                                            Nov 27, 2023
+                                        </p>
+                                        /
+                                        <p className="reade-time-text">
+                                            2 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="blog-content-wrapper position--relative">
+                        <Image
+                            src={Culture}
+                            // width={100}
+                            height={400}
+                            alt="Culture"
+                        />
+                        <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
+                            <div className="blog-type-wrapper full-width d-flex align-items-center justify-content-end">
+                                <p
+                                    className="blog-type-text border-radius-10 font-weight--400 d-flex
+                                    align-items-center justify-content--center font-size-12"
+                                >
+                                    Culture
+                                </p>
+                            </div>
+                            <div className="blog-title-date-wrapper">
+                                <h2 className="blog-title font-size-30 pl-10 pr-10 font-weight--800 line-height-40">
+                                    Chumphu Nye - Between sky & earth
+                                </h2>
+                                <div className="date-wrapper d-flex align-items-center justify-content--flex-start pl-10 pr-10">
+                                    <div className="icon-date-time-wrapper d-flex align-items-center justify-content--center">
+                                        <CalendarIcon />
+                                        <p className="date-text font-size-16 font-weight--400">
+                                            Nov 27, 2023
+                                        </p>
+                                        /
+                                        <p className="reade-time-text">
+                                            2 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="blog-content-wrapper position--relative">
+                        <Image
+                            src={Culture}
+                            // width={100}
+                            height={400}
+                            alt="Culture"
+                        />
+                        <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
+                            <div className="blog-type-wrapper full-width d-flex align-items-center justify-content-end">
+                                <p
+                                    className="blog-type-text border-radius-10 font-weight--400 d-flex
+                                    align-items-center justify-content--center font-size-12"
+                                >
+                                    Culture
+                                </p>
+                            </div>
+                            <div className="blog-title-date-wrapper">
+                                <h2 className="blog-title font-size-30 pl-10 pr-10 font-weight--800 line-height-40">
+                                    Chumphu Nye - Between sky & earth
+                                </h2>
+                                <div className="date-wrapper d-flex align-items-center justify-content--flex-start pl-10 pr-10">
+                                    <div className="icon-date-time-wrapper d-flex align-items-center justify-content--center">
+                                        <CalendarIcon />
+                                        <p className="date-text font-size-16 font-weight--400">
+                                            Nov 27, 2023
+                                        </p>
+                                        /
+                                        <p className="reade-time-text">
+                                            2 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="blog-content-wrapper position--relative">
+                        <Image
+                            src={Culture}
+                            // width={100}
+                            height={400}
+                            alt="Culture"
+                        />
+                        <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
+                            <div className="blog-type-wrapper full-width d-flex align-items-center justify-content-end">
+                                <p
+                                    className="blog-type-text border-radius-10 font-weight--400 d-flex
+                                    align-items-center justify-content--center font-size-12"
+                                >
+                                    Culture
+                                </p>
+                            </div>
+                            <div className="blog-title-date-wrapper">
+                                <h2 className="blog-title font-size-30 pl-10 pr-10 font-weight--800 line-height-40">
+                                    Chumphu Nye - Between sky & earth
+                                </h2>
+                                <div className="date-wrapper d-flex align-items-center justify-content--flex-start pl-10 pr-10">
+                                    <div className="icon-date-time-wrapper d-flex align-items-center justify-content--center">
+                                        <CalendarIcon />
+                                        <p className="date-text font-size-16 font-weight--400">
+                                            Nov 27, 2023
+                                        </p>
+                                        /
+                                        <p className="reade-time-text">
+                                            2 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="blog-content-wrapper position--relative">
+                        <Image
+                            src={Culture}
+                            // width={100}
+                            height={400}
+                            alt="Culture"
+                        />
+                        <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
+                            <div className="blog-type-wrapper full-width d-flex align-items-center justify-content-end">
+                                <p
+                                    className="blog-type-text border-radius-10 font-weight--400 d-flex
+                                    align-items-center justify-content--center font-size-12"
+                                >
+                                    Culture
+                                </p>
+                            </div>
+                            <div className="blog-title-date-wrapper">
+                                <h2 className="blog-title font-size-30 pl-10 pr-10 font-weight--800 line-height-40">
+                                    Chumphu Nye - Between sky & earth
+                                </h2>
+                                <div className="date-wrapper d-flex align-items-center justify-content--flex-start pl-10 pr-10">
+                                    <div className="icon-date-time-wrapper d-flex align-items-center justify-content--center">
+                                        <CalendarIcon />
+                                        <p className="date-text font-size-16 font-weight--400">
+                                            Nov 27, 2023
+                                        </p>
+                                        /
+                                        <p className="reade-time-text">
+                                            2 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="blog-content-wrapper position--relative">
+                        <Image
+                            src={Culture}
+                            // width={100}
+                            height={400}
+                            alt="Culture"
+                        />
+                        <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
+                            <div className="blog-type-wrapper full-width d-flex align-items-center justify-content-end">
+                                <p
+                                    className="blog-type-text border-radius-10 font-weight--400 d-flex
+                                    align-items-center justify-content--center font-size-12"
+                                >
+                                    Culture
+                                </p>
+                            </div>
+                            <div className="blog-title-date-wrapper">
+                                <h2 className="blog-title font-size-30 pl-10 pr-10 font-weight--800 line-height-40">
+                                    Chumphu Nye - Between sky & earth
+                                </h2>
+                                <div className="date-wrapper d-flex align-items-center justify-content--flex-start pl-10 pr-10">
+                                    <div className="icon-date-time-wrapper d-flex align-items-center justify-content--center">
+                                        <CalendarIcon />
+                                        <p className="date-text font-size-16 font-weight--400">
+                                            Nov 27, 2023
+                                        </p>
+                                        /
+                                        <p className="reade-time-text">
+                                            2 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="blog-content-wrapper position--relative">
+                        <Image
+                            src={Culture}
+                            // width={100}
+                            height={400}
+                            alt="Culture"
+                        />
+                        <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
+                            <div className="blog-type-wrapper full-width d-flex align-items-center justify-content-end">
+                                <p
+                                    className="blog-type-text border-radius-10 font-weight--400 d-flex
+                                    align-items-center justify-content--center font-size-12"
+                                >
+                                    Culture
+                                </p>
+                            </div>
+                            <div className="blog-title-date-wrapper">
+                                <h2 className="blog-title font-size-30 pl-10 pr-10 font-weight--800 line-height-40">
+                                    Chumphu Nye - Between sky & earth
+                                </h2>
+                                <div className="date-wrapper d-flex align-items-center justify-content--flex-start pl-10 pr-10">
+                                    <div className="icon-date-time-wrapper d-flex align-items-center justify-content--center">
+                                        <CalendarIcon />
+                                        <p className="date-text font-size-16 font-weight--400">
+                                            Nov 27, 2023
+                                        </p>
+                                        /
+                                        <p className="reade-time-text">
+                                            2 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="interested-section d-flex justify-content--center align-items-center">
+                <div className="text-interested-wrapper">
+                    <p className="updates-text">
+                        Get Updates on My Recent Experiences?
+                    </p>
                 </div>
             </div>
         </>
