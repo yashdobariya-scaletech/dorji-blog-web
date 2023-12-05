@@ -1,17 +1,273 @@
-@media only screen and (min-width: 1920px) {
-}
+@media only screen and (min-width: 1920px) {}
 
-@media only screen and (min-width: 1400px) {
-}
+@media only screen and (min-width: 1400px) {}
 
 @media only screen and (max-width: 1280px) {
+    .logo-nav_links-wrapper {
+        gap: 0px 100px;
+    }
+
+    .top-banner-section {
+        .welcome-title-slide-wrapper {
+            .slider-content-wrapper {
+                margin: 0px 0px 56px 20px;
+            }
+        }
+    }
+
+    .blog-tabs-content-section {
+        .blog-tabs-wrapper {
+            .tabs-list-wrapper {
+                .tabs-list {
+                    .list {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .interested-section {
+        .text-interested-wrapper {
+            .interested-form {
+                .input-your-email-address {
+                    width: 322px;
+                }
+
+                .email-sand-btn {
+                    width: 170px;
+                }
+            }
+
+        }
+    }
 }
 
 @media only screen and (max-width: 1024px) {
+    .logo-nav_links-wrapper {
+        gap: 0px 50px;
+
+        .nav_links-wrapper {
+            .navbar {
+                gap: 0px 25px;
+                color: #fff;
+            }
+        }
+    }
+
+    .blog-tabs-content-section {
+        .blog-tabs-wrapper {
+            .tabs-list-wrapper {
+                gap: 40px;
+            }
+        }
+
+        .blogs-wrapper {
+
+            grid-template-columns: auto auto auto;
+        }
+    }
+
+    .interested-section {
+        .text-interested-wrapper {
+            flex-direction: column;
+            gap: 20px;
+
+            .updates-text {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .footer-section {
+        height: auto;
+        padding: 40px 20px;
+
+        .footer-container {
+            .footer-wrapper {
+                flex-wrap: wrap;
+
+                .footer-logo-nav-links-wrapper {
+                    flex-wrap: wrap;
+                    gap: 50px;
+                    padding-bottom: 40px;
+
+                    .nav-links-wrapper {
+                        .footer-nav-list {
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    .logo-nav_links-wrapper {
+        .nav_links-wrapper {
+            display: none;
+        }
+    }
+
+    .search-wrapper {
+        width: 240px;
+    }
+
+    .sidenav-icon-wrapper {
+        display: block;
+    }
+
+    .top-banner-section {
+        .welcome-title-slide-wrapper {
+            .welcome-section-wrapper {
+                .welcome-text {
+                    font-size: 16px;
+                }
+
+                .mannkibata-text {
+                    font-size: 40PX;
+
+                    &::after {
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .blog-tabs-content-section {
+        padding-top: 60px;
+        gap: 30px;
+
+        .blog-tabs-wrapper {
+            .tabs-list-wrapper {
+                flex-wrap: wrap;
+                gap: 10px 20px;
+
+                .tabs-list {
+                    .list {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .blogs-wrapper {
+            gap: 20px;
+            grid-template-columns: auto auto;
+
+            .blog-content-wrapper {
+                .content-description-wrapper {
+                    .blog-title-date-wrapper {
+                        .blog-title {
+                            line-height: 33px;
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .interested-section {
+        .text-interested-wrapper {
+            .interested-form {
+                .input-your-email-address {
+                    max-width: 322px;
+                    width: 60%;
+                }
+
+                .email-sand-btn {
+                    max-width: 170px;
+                    width: 40%;
+                }
+            }
+        }
+    }
+
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 426px) {
+    .blog-tabs-content-section {
+
+        .blogs-wrapper {
+            gap: 20px;
+            grid-template-columns: auto;
+
+            .blog-content-wrapper {
+                .content-description-wrapper {
+                    .blog-title-date-wrapper {
+                        .blog-title {
+                            line-height: 40px;
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .interested-section {
+        height: auto;
+        padding: 40px 20px;
+
+        .text-interested-wrapper {
+            .updates-text {
+                text-align: center;
+            }
+
+            .interested-form {
+                width: 100%;
+                align-items: center;
+
+                flex-direction: column;
+
+                .input-your-email-address {
+                    width: 100%;
+                }
+
+                .email-sand-btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .footer-section {
+        .footer-container {
+            .footer-wrapper {
+                width: 100%;
+
+                .footer-logo-nav-links-wrapper {
+                    justify-content: center;
+
+                    .footer-logo-wrapper {
+                        .mannkibaat-by-wrapper {
+                            .mannkibaat-by-name-text {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+
+                    .nav-links-wrapper {
+                        width: 100%;
+
+                        .footer-nav-list {
+                            width: 100%;
+                            align-items: center;
+                        }
+                    }
+                }
+
+                .footer-social-text-wrapper {
+                    width: 100%;
+                    align-items: center;
+                }
+            }
+        }
+    }
 }
+
+@media only screen and (max-width: 320px) {}

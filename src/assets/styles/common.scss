@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: $bg-color;
+  // background-color: $bg-color;
   overflow-x: hidden;
 }
 
@@ -32,18 +32,17 @@
   top: 0px;
   width: 100%;
   margin: 0 auto;
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(20px);
+
   will-change: backdrop-filter;
-  // transition: background 0.1s ease-in-out;
+  z-index: 99;
 }
 
 .home-header {
   height: 500px;
-  background: linear-gradient(
-    180deg,
-    rgba(235, 60, 91, 0.5) -203.1%,
-    rgba(11, 11, 11, 0.5) 68.41%
-  );
+  background: linear-gradient(180deg,
+      rgba(235, 60, 91, 0.5) -203.1%,
+      rgba(11, 11, 11, 0.5) 68.41%);
 }
 
 .is-scroll {
@@ -57,10 +56,12 @@
   0% {
     top: -90px;
   }
+
   100% {
     top: 0px;
   }
 }
+
 .header-btn-conatiner {
   .btn-border {
     width: 100%;
@@ -75,46 +76,55 @@
   padding: 90px 20px 0px 20px;
 }
 
-.footer-wrapper {
-  background-color: #000000;
-}
+// .footer-wrapper {
+//   background-color: #000000;
+// }
 
-.bg-color {
-  background-color: $bg-color;
-}
+// .bg-color {
+//   background-color: $bg-color;
+// }
 
 .primary-color {
-  background-color: $primary-color;
+  // background-color: $primary-color;
 }
+
 .bg-color-light-black {
   background: #1c1c1c;
 }
-.primary-text--color {
-  color: $primary-color;
-}
-.light-red-color {
-  color: $light-red-color;
-}
-.white-color {
-  color: $white-color;
-}
 
-.blue-color {
-  color: $blue-color;
-}
+// .primary-text--color {
+//   // color: $primary-color;
+// }
 
-.grey-color {
-  color: $grey-color;
-}
+// .light-red-color {
+//   color: $light-red-color;
+// }
+
+// .white-color {
+//   color: $white-color;
+// }
+
+// .blue-color {
+//   color: $blue-color;
+// }
+
+// .grey-color {
+//   color: $grey-color;
+// }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  padding: 0px 20px;
 }
 
 .d-flex {
   display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
 }
 
 .flex-wrap--wrap {
@@ -163,6 +173,10 @@
 
 .align-items-start {
   align-items: start;
+}
+
+.align-items-end {
+  align-items: end;
 }
 
 .text--decoration-none {
@@ -235,6 +249,7 @@
   width: 240px;
   height: 52px;
 }
+
 .scroll-btn {
   // background-image: repeating-linear-gradient(180deg, transparent, transparent 10px, white 10px, white 10px) !important;
   background: linear-gradient(180deg, #0fdc47 0%, #008d27 100%);
@@ -250,9 +265,11 @@
   align-items: center;
   overflow: hidden;
   position: relative;
+
   span {
     z-index: 20;
   }
+
   &:after {
     background: #fff;
     content: "";
@@ -267,14 +284,17 @@
     width: 30px;
   }
 }
+
 @keyframes gradientAnimation {
   0% {
     left: -75px;
   }
+
   100% {
     left: 120%;
   }
 }
+
 .apple-btn-wrapper {
   border: 1.4875px solid white;
   border-radius: 9.61618px;
@@ -300,18 +320,24 @@
 .icon-wrapper {
   width: 64px;
   height: 64px;
-  background: $white-color;
+  // background: $white-color;
   border-radius: 11px;
 }
 
 .cursor-pointer {
   cursor: pointer;
 }
+
 .border-radius-6 {
   border-radius: 6px;
 }
+
 .border-radius-10 {
   border-radius: 10px;
+}
+
+.border-radius-15 {
+  border-radius: 15px;
 }
 
 .border-radius-20 {
@@ -329,9 +355,11 @@
 .d-none {
   display: none;
 }
+
 .font-size-65 {
   font-size: 65px;
 }
+
 .font-size-60 {
   font-size: 60px;
 }
@@ -407,6 +435,7 @@
 .font-size-12 {
   font-size: 12px;
 }
+
 .font-size-9 {
   font-size: 9px;
 }
@@ -415,12 +444,32 @@
   font-style: italic;
 }
 
+.top--0 {
+  top: 0px;
+}
+
 .top--4 {
   top: -4px;
 }
 
 .top--9 {
   top: -9px;
+}
+
+.top--20 {
+  top: 20px;
+}
+
+.left--0 {
+  left: 0px;
+}
+
+.right--0 {
+  right: 0px;
+}
+
+.right--20 {
+  right: 20px;
 }
 
 .no-margin {
@@ -434,9 +483,19 @@
 .p-5 {
   padding: 5px 0;
 }
+
+.pl-10 {
+  padding-left: 10px;
+}
+
 .pl-23 {
   padding-left: 23px;
 }
+
+.pl-20 {
+  padding-left: 20px;
+}
+
 .pt-0 {
   padding-top: 0px;
 }
@@ -476,9 +535,23 @@
 .pt-50 {
   padding-top: 50px;
 }
+
+.pt-85 {
+  padding-top: 85px;
+}
+
+.pt-120 {
+  padding-top: 120px;
+}
+
+.pt-130 {
+  padding-top: 130px;
+}
+
 .pt-150 {
   padding-top: 150px;
 }
+
 .pt-240 {
   padding-top: 240px;
 }
@@ -486,6 +559,7 @@
 .pb-10 {
   padding-bottom: 10px;
 }
+
 .pb-20 {
   padding-bottom: 20px;
 }
@@ -517,18 +591,35 @@
 .pb-80 {
   padding-bottom: 80px !important;
 }
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
 .pr-23 {
   padding-right: 23px;
 }
+
+.pr-20 {
+  padding-right: 20px;
+}
+
 .pr-25 {
   padding-right: 25px;
 }
+
 .pr-37 {
   padding-right: 37px;
 }
+
 .pr-40 {
   padding-right: 40px;
 }
+
 .mt-0 {
   margin-top: 0px;
 }
@@ -560,6 +651,7 @@
 .mt-24 {
   margin-top: 24px;
 }
+
 .mt-25 {
   margin-top: 25px;
 }
@@ -755,9 +847,11 @@
 .mr-30 {
   margin-right: 30px;
 }
+
 .mr-36 {
   margin-right: 36px;
 }
+
 .mr-40 {
   margin-right: 40px;
 }
@@ -813,12 +907,15 @@
 .ml-15 {
   margin-left: 15px;
 }
+
 .ml-32 {
   margin-left: 32px;
 }
+
 .ml-33 {
   margin-left: 33px;
 }
+
 .ml-35 {
   margin-left: 35px;
 }
@@ -842,9 +939,11 @@
 .ml-100 {
   margin-left: 100px;
 }
+
 .ml-117 {
   margin-left: 117px;
 }
+
 .margin--center {
   margin: 0 auto;
 }
@@ -856,12 +955,15 @@
 .line-height-21 {
   line-height: 21px;
 }
+
 .line-height-22 {
   line-height: 22px;
 }
+
 .line-height-18 {
   line-height: 18px;
 }
+
 .line-height-15 {
   line-height: 15px;
 }
@@ -922,9 +1024,9 @@
   line-height: 72px;
 }
 
-.white-color {
-  color: $white-color;
-}
+// .white-color {
+//   color: $white-color;
+// }
 
 .font-weight--bold {
   font-weight: 700;
@@ -966,12 +1068,20 @@
   width: 100%;
 }
 
+.full-height {
+  height: 100%;
+}
+
 .width--93 {
   width: 93%;
 }
 
 .width--30 {
   width: 30%;
+}
+
+.width--60 {
+  width: 60%;
 }
 
 .half-width {
@@ -981,6 +1091,7 @@
 .width-602 {
   width: 602px;
 }
+
 .letter-spacing {
   letter-spacing: 0.05em;
 }
@@ -1000,6 +1111,7 @@
 .letter-spacing-01 {
   letter-spacing: 0.01em;
 }
+
 .pointer-events {
   pointer-events: none;
 }
@@ -1022,9 +1134,8 @@
   font-style: normal;
 }
 
-.svg-width {
-  width: 47px;
-  height: 94px;
-  filter: drop-shadow(3px 3px 0 $black-color)
-    drop-shadow(3px 0px 0 $light-red-color);
-}
+// .svg-width {
+//   width: 47px;
+//   height: 94px;
+//   filter: drop-shadow(3px 3px 0 $black-color) drop-shadow(3px 0px 0 $light-red-color);
+// }
