@@ -181,3 +181,86 @@ export const CalendarIcon: React.FC<Props> = (props) => (
         </defs>
     </svg>
 );
+
+export const FooterLogo: React.FC<Props> = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="60"
+        height="60"
+        viewBox="0 0 60 60"
+        fill="none"
+    >
+        <path
+            d="M5.99997 12V3H27.9999C36.8333 3 54.4999 8.2 54.4999 29C54.4999 49.8 39.4999 55.6667 31.9999 56H5.99994V32C5.99994 24.8 6.99994 24 9.99994 24H20.9999V42H27.9999C29.9999 42 39.9999 41 39.4999 29C39.0999 19.4 31.6666 17.3333 27.9999 17.5H15C6.59997 17.9 5.99997 15 5.99997 12Z"
+            fill="white"
+        />
+        <path
+            d="M54.4999 29C54.4999 8.2 36.8333 3 27.9999 3C34.6666 5.33333 47.9999 13.8 47.9999 29C47.9999 44.2 35.0832 53.8284 20.9999 53C14.7017 52.6295 5.99994 47 5.99994 47V56H31.9999C39.4999 55.6667 54.4999 49.8 54.4999 29Z"
+            fill="#C93E29"
+        />
+    </svg>
+);
+
+export const FacebookIcon: React.FC<Props> = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+    >
+        <g
+            opacity="0.5"
+            clip-path="url(#clip0_54_370)"
+        >
+            <path
+                d="M5.83331 8.33333V11.6667H8.33331V17.5H11.6666V11.6667H14.1666L15 8.33333H11.6666V6.66667C11.6666 6.44565 11.7544 6.23369 11.9107 6.07741C12.067 5.92113 12.279 5.83333 12.5 5.83333H15V2.5H12.5C11.3949 2.5 10.3351 2.93899 9.5537 3.72039C8.7723 4.50179 8.33331 5.5616 8.33331 6.66667V8.33333H5.83331Z"
+                stroke="white"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </g>
+        <defs>
+            <clipPath id="clip0_54_370">
+                <rect
+                    width="20"
+                    height="20"
+                    fill="white"
+                />
+            </clipPath>
+        </defs>
+    </svg>
+);
+
+export const TwitterIcon: React.FC<Props> = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+    >
+        <g
+            opacity="0.5"
+            clip-path="url(#clip0_54_373)"
+        >
+            <path
+                d="M18.3334 3.34168C17.5 3.75001 16.6834 3.91584 15.8334 4.16668C14.8992 3.11251 13.5142 3.05418 12.1834 3.55251C10.8525 4.05084 9.98085 5.26918 10 6.66668V7.50001C7.29585 7.56918 4.88752 6.33751 3.33335 4.16668C3.33335 4.16668 -0.151646 10.3608 6.66669 13.3333C5.10669 14.3725 3.55085 15.0733 1.66669 15C4.42335 16.5025 7.42752 17.0192 10.0284 16.2642C13.0117 15.3975 15.4634 13.1617 16.4042 9.81251C16.6848 8.7939 16.8242 7.74156 16.8184 6.68501C16.8184 6.47751 18.0767 4.37501 18.3334 3.34084V3.34168Z"
+                stroke="white"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </g>
+        <defs>
+            <clipPath id="clip0_54_373">
+                <rect
+                    width="20"
+                    height="20"
+                    fill="white"
+                />
+            </clipPath>
+        </defs>
+    </svg>
+);

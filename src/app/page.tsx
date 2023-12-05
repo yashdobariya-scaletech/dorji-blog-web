@@ -1,9 +1,12 @@
 import {
     CalendarIcon,
     CloseIcon,
+    FacebookIcon,
+    FooterLogo,
     Logo,
     MenuIcon,
     SearchIcon,
+    TwitterIcon,
 } from "@/assets/icons/icon";
 import Culture from "../assets/images/rectangle-31.png";
 import Image from "next/image";
@@ -60,6 +63,7 @@ export default function Home() {
                     </div>
                 </div>
             </header>
+
             <div className="display-none sidenav-mobile-wrapper d-flex justify-content-end position--fixed top--0 right--0">
                 <div className="sidenav">
                     <div className="close-icon-wrapper position--absolute top--20 right--20">
@@ -73,6 +77,7 @@ export default function Home() {
                     </ul>
                 </div>
             </div>
+
             <div className="top-banner-section pt-85">
                 <div className="welcome-title-slide-wrapper full-width full-height d-flex justify-content-space-between align-items-start flex-direction--column">
                     <div className="welcome-section-wrapper full-width d-flex align-items-center full-height flex-direction--column pt-120">
@@ -100,6 +105,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+
             <div className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130">
                 <div className="blog-tabs-wrapper d-flex">
                     <ul className="tabs-list-wrapper d-flex">
@@ -130,8 +136,11 @@ export default function Home() {
                     <div className="blog-content-wrapper position--relative">
                         <Image
                             src={Culture}
-                            // width={100}
-                            height={400}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                            }}
                             alt="Culture"
                         />
                         <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
@@ -154,7 +163,7 @@ export default function Home() {
                                             Nov 27, 2023
                                         </p>
                                         /
-                                        <p className="reade-time-text">
+                                        <p className="reade-time-text ">
                                             2 min read
                                         </p>
                                     </div>
@@ -165,8 +174,11 @@ export default function Home() {
                     <div className="blog-content-wrapper position--relative">
                         <Image
                             src={Culture}
-                            // width={100}
-                            height={400}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                            }}
                             alt="Culture"
                         />
                         <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
@@ -189,7 +201,7 @@ export default function Home() {
                                             Nov 27, 2023
                                         </p>
                                         /
-                                        <p className="reade-time-text">
+                                        <p className="reade-time-text ">
                                             2 min read
                                         </p>
                                     </div>
@@ -200,8 +212,11 @@ export default function Home() {
                     <div className="blog-content-wrapper position--relative">
                         <Image
                             src={Culture}
-                            // width={100}
-                            height={400}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                            }}
                             alt="Culture"
                         />
                         <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
@@ -224,7 +239,7 @@ export default function Home() {
                                             Nov 27, 2023
                                         </p>
                                         /
-                                        <p className="reade-time-text">
+                                        <p className="reade-time-text ">
                                             2 min read
                                         </p>
                                     </div>
@@ -235,8 +250,11 @@ export default function Home() {
                     <div className="blog-content-wrapper position--relative">
                         <Image
                             src={Culture}
-                            // width={100}
-                            height={400}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                            }}
                             alt="Culture"
                         />
                         <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
@@ -259,7 +277,7 @@ export default function Home() {
                                             Nov 27, 2023
                                         </p>
                                         /
-                                        <p className="reade-time-text">
+                                        <p className="reade-time-text ">
                                             2 min read
                                         </p>
                                     </div>
@@ -270,8 +288,11 @@ export default function Home() {
                     <div className="blog-content-wrapper position--relative">
                         <Image
                             src={Culture}
-                            // width={100}
-                            height={400}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                            }}
                             alt="Culture"
                         />
                         <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
@@ -294,7 +315,7 @@ export default function Home() {
                                             Nov 27, 2023
                                         </p>
                                         /
-                                        <p className="reade-time-text">
+                                        <p className="reade-time-text ">
                                             2 min read
                                         </p>
                                     </div>
@@ -305,8 +326,11 @@ export default function Home() {
                     <div className="blog-content-wrapper position--relative">
                         <Image
                             src={Culture}
-                            // width={100}
-                            height={400}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                            }}
                             alt="Culture"
                         />
                         <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
@@ -329,7 +353,7 @@ export default function Home() {
                                             Nov 27, 2023
                                         </p>
                                         /
-                                        <p className="reade-time-text">
+                                        <p className="reade-time-text ">
                                             2 min read
                                         </p>
                                     </div>
@@ -340,8 +364,11 @@ export default function Home() {
                     <div className="blog-content-wrapper position--relative">
                         <Image
                             src={Culture}
-                            // width={100}
-                            height={400}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                            }}
                             alt="Culture"
                         />
                         <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
@@ -364,7 +391,7 @@ export default function Home() {
                                             Nov 27, 2023
                                         </p>
                                         /
-                                        <p className="reade-time-text">
+                                        <p className="reade-time-text ">
                                             2 min read
                                         </p>
                                     </div>
@@ -375,8 +402,11 @@ export default function Home() {
                     <div className="blog-content-wrapper position--relative">
                         <Image
                             src={Culture}
-                            // width={100}
-                            height={400}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                            }}
                             alt="Culture"
                         />
                         <div className="content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0">
@@ -399,7 +429,7 @@ export default function Home() {
                                             Nov 27, 2023
                                         </p>
                                         /
-                                        <p className="reade-time-text">
+                                        <p className="reade-time-text ">
                                             2 min read
                                         </p>
                                     </div>
@@ -409,13 +439,68 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="interested-section d-flex justify-content--center align-items-center">
-                <div className="text-interested-wrapper">
-                    <p className="updates-text">
+
+            <div className="interested-section d-flex justify-content--center align-items-center pr-20 pl-20">
+                <div className="text-interested-wrapper d-flex justify-content-space-between align-items-center">
+                    <p className="updates-text font-weight--400 font-size-24">
                         Get Updates on My Recent Experiences?
                     </p>
+                    <form className="interested-form d-flex">
+                        <input
+                            type="email"
+                            className="input-your-email-address border-radius-15 pr-20 pl-20 pt-10 pb-10 font-size-14 font-weight--400"
+                            placeholder="Enter email address here"
+                        />
+                        <button className="email-sand-btn border-radius-10 font-size-14 font-weight--600">
+                            Yes, I am interested
+                        </button>
+                    </form>
                 </div>
             </div>
+            <footer className="footer-section">
+                <div className="footer-container full-height d-flex justify-content-center align-items-center">
+                    <div className="footer-wrapper full-width d-flex justify-content-space-between align-items-center">
+                        <div className="footer-logo-nav-links-wrapper d-flex">
+                            <div className="footer-logo-wrapper d-flex ">
+                                <FooterLogo />
+                                <div className="mannkibaat-by-wrapper d-flex flex-direction--column">
+                                    <p className="mannkibaat-by-text font-size-16 font-weight--400">
+                                        #MannKiBaat by
+                                    </p>
+                                    <p className="mannkibaat-by-name-text font-size-30 font-weight--400">
+                                        Dorji Wangchuk
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="nav-links-wrapper d-flex align-items-end">
+                                <ul className="footer-nav-list d-flex align-items-end">
+                                    <li className="footer-nav-links">
+                                        <a className="footer-links">Home</a>
+                                    </li>
+                                    <li className="footer-nav-links">
+                                        <a className="footer-links">Blogs</a>
+                                    </li>
+                                    <li className="footer-nav-links">
+                                        <a className="footer-links">About Me</a>
+                                    </li>
+                                    <li className="footer-nav-links">
+                                        <a className="footer-links">
+                                            Contact Me
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="footer-social-text-wrapper d-flex flex-direction--column">
+                            <p className="social-text">Follow me on</p>
+                            <div className="social-wrapper d-flex">
+                                <FacebookIcon />
+                                <TwitterIcon />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </>
     );
 }
