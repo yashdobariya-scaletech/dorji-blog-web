@@ -1,3 +1,4 @@
+"use client";
 import {
     CalendarIcon,
     CloseIcon,
@@ -10,8 +11,53 @@ import {
 } from "@/assets/icons/icon";
 import Culture from "../assets/images/rectangle-31.png";
 import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+    let [nav1, setNav1] = useState(null);
+    let [nav2, setNav2] = useState(null);
+    let sliderRef1 = useRef(null);
+    let sliderRef2 = useRef(null);
+
+    useEffect(() => {
+        setNav1(sliderRef1);
+        setNav2(sliderRef2);
+    }, []);
+    // const settingsMain = {
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     arrows: false,
+    //     fade: true,
+    //     asNavFor: ".slider-nav",
+    // };
+
+    // const settingsThumbs = {
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     asNavFor: ".slider-for",
+    //     dots: true,
+    //     centerMode: true,
+    //     swipeToSlide: true,
+    //     focusOnSelect: true,
+    //     centerPadding: "10px",
+    // };
+    const demo = [
+        {
+            id: "1",
+            imgUrl: "https://source.unsplash.com/random/200x200?sig=1",
+        },
+        {
+            id: "2",
+            imgUrl: "https://source.unsplash.com/random/200x200?sig=2",
+        },
+        {
+            id: "3",
+            imgUrl: "https://source.unsplash.com/random/200x200?sig=4",
+        },
+    ];
     return (
         <>
             <header className="header-container pb-20 pt-20 d-flex align-items-center justify-content-space-between ">
@@ -78,7 +124,26 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="top-banner-section pt-85">
+            <div className="top-banner-section position--relative pt-85">
+                <Slider
+                    // {...settingsMain}
+                    asNavFor={nav2}
+                    ref={(slider) => (sliderRef1 = slider)}
+                >
+                    {demo.map((demobgimg) => {
+                        return (
+                            <div
+                                key={demobgimg.id}
+                                // style={{
+                                //     backgroundImage: `url(${demobgimg.imgUrl})`,
+                                // }}
+                                className="position--absolute"
+                            >
+                                {demobgimg.id}
+                            </div>
+                        );
+                    })}
+                </Slider>
                 <div className="welcome-title-slide-wrapper full-width full-height d-flex justify-content-space-between align-items-start flex-direction--column">
                     <div className="welcome-section-wrapper full-width d-flex align-items-center full-height flex-direction--column pt-120">
                         <p className="welcome-text font-size-24 font-weight--400 text-align--center">
@@ -88,21 +153,57 @@ export default function Home() {
                             #MannKiBata
                         </p>
                     </div>
-                    <div className="slider-content-wrapper d-flex align-items-end justify-content--center">
-                        <div className="feature-blog-wrapper d-flex align-items-center">
-                            <p className="feature-text">Featured Blogs</p>
-                            <div className="feature-design"></div>
+                    <Slider
+                        // {...settingsThumbs}
+                        asNavFor={nav1}
+                        ref={(slider) => (sliderRef2 = slider)}
+                    >
+                        {/* <div className="slider-content-wrapper d-flex align-items-end justify-content--center">
+                            <div className="feature-blog-wrapper d-flex align-items-center">
+                                <p className="feature-text">Featured Blogs</p>
+                                <div className="feature-design"></div>
+                            </div>
+                            <div className="blog-slider-description d-flex justify-content--center align-items-end">
+                                <p className="slider-description-text">
+                                    Bless me into <span>Usefulness</span> .{" "}
+                                    <br />
+                                    May you all be blessed into Usefulness.
+                                </p>
+                                <p className="double-quotes d-flex justify-content--center align-items-end">
+                                    ”
+                                </p>
+                            </div>
                         </div>
-                        <div className="blog-slider-description d-flex justify-content--center align-items-end">
-                            <p className="slider-description-text">
-                                Bless me into <span>Usefulness</span> . <br />
-                                May you all be blessed into Usefulness.
-                            </p>
-                            <p className="double-quotes d-flex justify-content--center align-items-end">
-                                ”
-                            </p>
-                        </div>
-                    </div>
+                        <div className="slider-content-wrapper d-flex align-items-end justify-content--center">
+                            <div className="feature-blog-wrapper d-flex align-items-center">
+                                <p className="feature-text">Featured Blogs</p>
+                                <div className="feature-design"></div>
+                            </div>
+                            <div className="blog-slider-description d-flex justify-content--center align-items-end">
+                                <p className="slider-description-text">
+                                    Bless me into <span>Usefulness</span> .{" "}
+                                    <br />
+                                    May you all be blessed into Usefulness.
+                                </p>
+                                <p className="double-quotes d-flex justify-content--center align-items-end">
+                                    ”
+                                </p>
+                            </div>
+                        </div> */}
+                        {demo.map((demoContent) => {
+                            return (
+                                <div
+                                    key={demoContent.id}
+                                    style={{
+                                        color: "white",
+                                        backgroundColor: "red",
+                                    }}
+                                >
+                                    {demoContent.id}
+                                </div>
+                            );
+                        })}
+                    </Slider>
                 </div>
             </div>
 
