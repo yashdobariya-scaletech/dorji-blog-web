@@ -6,6 +6,8 @@ export const API_CONFIG = {
   baseUrl: "http://127.0.0.1:1337",
   path: {
     categories: "categories",
+    articles: "articles?populate=*",
+    subscribeUsers: "subscribe-users",
   },
 };
 

@@ -10,13 +10,15 @@ import { API_CONFIG, HttpService } from "../services/http.service";
 
 const Home = () => {
   const [categoriesList, setCategoriesList] = useState([]);
+  const [articlesList, setArticlesList] = useState([]);
   const [activeTab, setActiveTab] = useState<string>("ALL");
 
   useEffect(() => {
-    fetchLiveSmarterData();
+    getCategoriesData();
+    getArticlesInfo();
   }, []);
 
-  const fetchLiveSmarterData = () => {
+  const getCategoriesData = () => {
     HttpService.get(API_CONFIG.path.categories)
       .then((response: any) => {
         const categoriesData = response.data.map(
@@ -30,8 +32,17 @@ const Home = () => {
       });
   };
 
+  const getArticlesInfo = () => {
+    HttpService.get(API_CONFIG.path.articles)
+      .then((response: any) => {
+        setArticlesList(response);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   const handleTabChange = (incomingTab: string) => {
-    console.log("incomingTab:", incomingTab);
     setActiveTab(incomingTab);
   };
 
@@ -47,7 +58,7 @@ const Home = () => {
             handleTabChange={handleTabChange}
           />
         )}
-        <BlogCard />
+        <BlogCard articlesList={articlesList} />
       </div>
       <Subscribe />
       <Footer />

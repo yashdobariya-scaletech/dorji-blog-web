@@ -2,7 +2,10 @@ import { CalendarIcon } from "@/assets/icons/icon";
 import Image from "next/image";
 import Culture from "../assets/images/rectangle-31.png";
 
-const BlogCard = () => {
+interface Props {
+  articlesList: any;
+}
+const BlogCard: React.FC<Props> = (props) => {
   return (
     <div className='blogs-wrapper full-width'>
       <div className='blog-content-wrapper position--relative'>
