@@ -26,7 +26,7 @@ const BlogCard: React.FC<Props> = (props) => {
             /> */}
                 <img
                   className='preview-image-wrapper'
-                  src={`http://localhost:1337${item.attributes.previewImage.data.attributes.url}`}
+                  src={`https://f7aa-2401-4900-1c80-3755-8925-a2be-1221-9a5f.ngrok-free.app${item.attributes.previewImage.data.attributes.url}`}
                   alt='Description of the image'
                   width='500'
                 />

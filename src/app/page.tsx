@@ -12,6 +12,7 @@ const Home = () => {
   const [categoriesList, setCategoriesList] = useState([]);
   const [articlesList, setArticlesList] = useState({} as any);
   const [activeTab, setActiveTab] = useState<string>("ALL");
+  const [subscribeUserEmail, setSubscribeUserEmail] = useState<string>("ALL");
 
   useEffect(() => {
     getCategoriesData();
@@ -52,8 +53,31 @@ const Home = () => {
       });
   };
 
+  const subscribeUser = () => {
+    const payload = {
+      data: {
+        email: subscribeUserEmail,
+      },
+    };
+    HttpService.post(API_CONFIG.path.subscribeUsers, payload)
+      .then((response: any) => {
+        setArticlesList(response);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   const handleTabChange = (incomingTab: string) => {
-    setActiveTab(incomingTab);
+    if (incomingTab) {
+      setActiveTab(incomingTab);
+    }
+  };
+
+  const handleOnChange = (e: any) => {
+    if (e.target.value) {
+      setSubscribeUserEmail(e.target.value);
+    }
   };
 
   return (
@@ -70,7 +94,10 @@ const Home = () => {
         )}
         <BlogCard articlesList={articlesList.data} />
       </div>
-      <Subscribe />
+      <Subscribe
+        handleOnChange={handleOnChange}
+        subscribeUser={subscribeUser}
+      />
       <Footer />
     </>
   );
