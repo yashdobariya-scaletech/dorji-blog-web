@@ -15,6 +15,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useRef, useState } from "react";
+import { SassColor } from "sass";
 
 export default function Home() {
     let [nav1, setNav1] = useState(null);
@@ -26,36 +27,42 @@ export default function Home() {
         setNav1(sliderRef1);
         setNav2(sliderRef2);
     }, []);
-    // const settingsMain = {
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     arrows: false,
-    //     fade: true,
-    //     asNavFor: ".slider-nav",
-    // };
+    const settingsMain = {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: ".slider-nav",
+    };
 
-    // const settingsThumbs = {
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     asNavFor: ".slider-for",
-    //     dots: true,
-    //     centerMode: true,
-    //     swipeToSlide: true,
-    //     focusOnSelect: true,
-    //     centerPadding: "10px",
-    // };
+    const settingsThumbs = {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: ".slider-for",
+        dots: false,
+        arrows: false,
+        // centerMode: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        swipeToSlide: true,
+        // focusOnSelect: true,
+        // centerPadding: "10px",
+    };
     const demo = [
         {
-            id: "1",
-            imgUrl: "https://source.unsplash.com/random/200x200?sig=1",
+            id: "title-1",
+            imgUrl: "https://source.unsplash.com/random/1920x1080/?wallpaper,landscape",
+            color: "red",
         },
         {
-            id: "2",
-            imgUrl: "https://source.unsplash.com/random/200x200?sig=2",
+            id: "title-2",
+            imgUrl: "https://www.gstatic.com/webp/gallery3/2.png",
+            color: "green",
         },
         {
-            id: "3",
-            imgUrl: "https://source.unsplash.com/random/200x200?sig=4",
+            id: "title-3",
+            imgUrl: "https://source.unsplash.com/random/1920x1080/?wallpaper,landscape",
+            color: "blue",
         },
     ];
     return (
@@ -126,58 +133,64 @@ export default function Home() {
 
             <div className="top-banner-section position--relative pt-85">
                 <Slider
-                    // {...settingsMain}
+                    {...settingsMain}
                     asNavFor={nav2}
                     ref={(slider) => (sliderRef1 = slider)}
                 >
-                    {demo.map((demobgimg) => {
+                    {demo.map((demoContent) => {
+                        console.log(demoContent.color);
                         return (
                             <div
-                                key={demobgimg.id}
-                                // style={{
-                                //     backgroundImage: `url(${demobgimg.imgUrl})`,
-                                // }}
-                                className="position--absolute"
+                                className="banner-section-bg-img position--absolute top--0 left--0 full-width full-height"
+                                key={demoContent.id}
                             >
-                                {demobgimg.id}
+                                <div
+                                    style={{
+                                        color: "white",
+                                        backgroundImage: `url(${demoContent.imgUrl})`,
+                                    }}
+                                >
+                                    <p
+                                        style={{
+                                            color: "white",
+                                        }}
+                                    >
+                                        {demoContent.id}
+                                    </p>
+                                </div>
                             </div>
                         );
                     })}
                 </Slider>
-                <div className="welcome-title-slide-wrapper full-width full-height d-flex justify-content-space-between align-items-start flex-direction--column">
+                <div className="welcome-title-slide-wrapper position--absolute top--0 left--0 full-width full-height d-flex justify-content-space-between align-items-start flex-direction--column">
                     <div className="welcome-section-wrapper full-width d-flex align-items-center full-height flex-direction--column pt-120">
                         <p className="welcome-text font-size-24 font-weight--400 text-align--center">
                             Welcome to
                         </p>
                         <p className="mannkibata-text font-size-60 font-weight--700">
-                            #MannKiBata
+                            #MannKiBaat
                         </p>
                     </div>
-                    <Slider
-                        // {...settingsThumbs}
-                        asNavFor={nav1}
-                        ref={(slider) => (sliderRef2 = slider)}
-                    >
-                        {/* <div className="slider-content-wrapper d-flex align-items-end justify-content--center">
-                            <div className="feature-blog-wrapper d-flex align-items-center">
-                                <p className="feature-text">Featured Blogs</p>
-                                <div className="feature-design"></div>
-                            </div>
-                            <div className="blog-slider-description d-flex justify-content--center align-items-end">
-                                <p className="slider-description-text">
-                                    Bless me into <span>Usefulness</span> .{" "}
-                                    <br />
-                                    May you all be blessed into Usefulness.
-                                </p>
-                                <p className="double-quotes d-flex justify-content--center align-items-end">
-                                    ”
-                                </p>
-                            </div>
+
+                    <div className="slider-content-wrapper d-flex align-items-end justify-content--center">
+                        <div className="feature-blog-wrapper d-flex align-items-center">
+                            <p className="feature-text">Featured Blogs</p>
+                            <div className="feature-design"></div>
                         </div>
-                        <div className="slider-content-wrapper d-flex align-items-end justify-content--center">
-                            <div className="feature-blog-wrapper d-flex align-items-center">
-                                <p className="feature-text">Featured Blogs</p>
-                                <div className="feature-design"></div>
+                        <Slider
+                            {...settingsThumbs}
+                            asNavFor={nav1}
+                            ref={(slider) => (sliderRef2 = slider)}
+                        >
+                            <div className="blog-slider-description d-flex justify-content--center align-items-end">
+                                <p className="slider-description-text">
+                                    Bless me into <span>Usefulness</span> .{" "}
+                                    <br />
+                                    May you all be blessed into Usefulness.
+                                </p>
+                                <p className="double-quotes d-flex justify-content--center align-items-end">
+                                    ”
+                                </p>
                             </div>
                             <div className="blog-slider-description d-flex justify-content--center align-items-end">
                                 <p className="slider-description-text">
@@ -189,8 +202,19 @@ export default function Home() {
                                     ”
                                 </p>
                             </div>
-                        </div> */}
-                        {demo.map((demoContent) => {
+                            <div className="blog-slider-description d-flex justify-content--center align-items-end">
+                                <p className="slider-description-text">
+                                    Bless me into <span>Usefulness</span> .{" "}
+                                    <br />
+                                    May you all be blessed into Usefulness.
+                                </p>
+                                <p className="double-quotes d-flex justify-content--center align-items-end">
+                                    ”
+                                </p>
+                            </div>
+                        </Slider>
+                    </div>
+                    {/* {demo.map((demoContent) => {
                             return (
                                 <div
                                     key={demoContent.id}
@@ -202,8 +226,7 @@ export default function Home() {
                                     {demoContent.id}
                                 </div>
                             );
-                        })}
-                    </Slider>
+                        })} */}
                 </div>
             </div>
 
