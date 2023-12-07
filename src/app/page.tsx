@@ -10,13 +10,17 @@ import { API_CONFIG, HttpService } from "../services/http.service";
 
 const Home = () => {
   const [categoriesList, setCategoriesList] = useState([]);
-  const [articlesList, setArticlesList] = useState([]);
+  const [articlesList, setArticlesList] = useState({} as any);
   const [activeTab, setActiveTab] = useState<string>("ALL");
 
   useEffect(() => {
     getCategoriesData();
     getArticlesInfo();
   }, []);
+
+  useEffect(() => {
+    getArticlesInfo();
+  }, [activeTab]);
 
   const getCategoriesData = () => {
     HttpService.get(API_CONFIG.path.categories)
@@ -33,7 +37,13 @@ const Home = () => {
   };
 
   const getArticlesInfo = () => {
-    HttpService.get(API_CONFIG.path.articles)
+    let params;
+    if (activeTab === "ALL") {
+      params = "";
+    } else {
+      params = `&filters[categories][title][$eqi]=${activeTab}`;
+    }
+    HttpService.get(`${API_CONFIG.path.articles}${params}`)
       .then((response: any) => {
         setArticlesList(response);
       })
@@ -58,7 +68,7 @@ const Home = () => {
             handleTabChange={handleTabChange}
           />
         )}
-        <BlogCard articlesList={articlesList} />
+        <BlogCard articlesList={articlesList.data} />
       </div>
       <Subscribe />
       <Footer />

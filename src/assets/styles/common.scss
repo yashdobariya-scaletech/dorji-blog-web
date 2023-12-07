@@ -1181,3 +1181,9 @@
     padding: 12px 12px;
   }
 }
+
+.preview-image-wrapper {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}

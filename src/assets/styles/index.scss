@@ -21,7 +21,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #B3BCCA;
+  background: #b3bcca;
 }
 
 .logo-nav_links-wrapper {
@@ -38,7 +38,7 @@ a {
 
         &:active {
           opacity: 1;
-          border-bottom: 2px solid #C93E29;
+          border-bottom: 2px solid #c93e29;
         }
       }
     }
@@ -47,7 +47,7 @@ a {
 
 .search-wrapper {
   width: 303px;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
 
   .search-input {
     outline: none;
@@ -68,7 +68,6 @@ a {
   width: 100%;
   height: 100vh;
   backdrop-filter: blur(2px);
-
 
   .sidenav {
     min-width: 300px;
@@ -120,19 +119,17 @@ a {
           width: 5px;
           height: 75px;
           background-color: #fff;
-          animation: blink-caret .75s step-end infinite;
+          animation: blink-caret 0.75s step-end infinite;
 
           @keyframes blink-caret {
-
             from,
             to {
-              background-color: transparent
+              background-color: transparent;
             }
 
             50% {
               background-color: #fff;
             }
-
           }
         }
       }
@@ -152,7 +149,7 @@ a {
           width: 2px;
           height: 100px;
           writing-mode: vertical-lr;
-          background-color: #0243C1;
+          background-color: #0243c1;
         }
       }
 
@@ -160,12 +157,11 @@ a {
         gap: 10px;
 
         .double-quotes {
-          color: #0243C1;
+          color: #0243c1;
           font-size: 60px;
           line-height: 45px;
         }
       }
-
     }
   }
 }
@@ -179,29 +175,29 @@ a {
 
       .tabs-list {
         .list {
-          color: #B3BCCA;
+          color: #b3bcca;
           font-size: 26px;
           font-weight: 600;
 
           &:active {
-            color: #0F1A2E;
+            color: #0f1a2e;
           }
         }
       }
-
     }
   }
 
   .blogs-wrapper {
     display: grid;
     gap: 40px;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 25% 25% 25% 25%;
 
     .blog-content-wrapper {
       width: 100%;
+      height: 400px;
 
       .content-description-wrapper {
-        background: rgba(0, 0, 0, 0.50);
+        background: rgba(0, 0, 0, 0.5);
 
         .blog-type-wrapper {
           padding: 10px;
@@ -210,25 +206,25 @@ a {
             height: 29px;
             width: 62px;
             color: #fff;
-            background: #0243C1;
+            background: #0243c1;
           }
         }
 
         .blog-title {
           color: #fff;
-          text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.20);
+          text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.2);
         }
 
         .date-wrapper {
           height: 50px;
-          background: rgba(0, 0, 0, 0.60);
+          background: rgba(0, 0, 0, 0.6);
 
           .icon-date-time-wrapper {
             gap: 10px;
-            color: #D4DAE6;
+            color: #d4dae6;
 
             .date-text {
-              color: #D4DAE6;
+              color: #d4dae6;
             }
           }
         }
@@ -238,30 +234,29 @@ a {
 }
 
 .interested-section {
-  background-color: #D4DAE6;
+  background-color: #d4dae6;
   height: 198px;
 
   .text-interested-wrapper {
     width: 1280px;
 
     .updates-text {
-      color: #0F1A2E;
+      color: #0f1a2e;
     }
 
     .interested-form {
       gap: 20px;
 
       .input-your-email-address {
-        background: rgba(255, 255, 255, 0.40);
+        background: rgba(255, 255, 255, 0.4);
         outline: none;
-        color: #0F1A2E;
+        color: #0f1a2e;
         // opacity: 0.5;
         width: 522px;
         height: 38px;
 
-
         &::placeholder {
-          color: #0F1A2E;
+          color: #0f1a2e;
           opacity: 0.5;
         }
       }
@@ -269,10 +264,10 @@ a {
       .email-sand-btn {
         width: 190px;
         height: 38px;
-        background: #C93E29;
+        background: #c93e29;
         color: #fff;
 
-        box-shadow: 0px 4px 10px 0px rgba(201, 62, 41, 0.20);
+        box-shadow: 0px 4px 10px 0px rgba(201, 62, 41, 0.2);
       }
     }
   }
@@ -280,7 +275,7 @@ a {
 
 .footer-section {
   height: 260px;
-  background: #0F1A2E;
+  background: #0f1a2e;
 
   .footer-container {
     max-width: 1460px;
@@ -329,7 +324,6 @@ a {
         .social-text {
           color: #fff;
           opacity: 0.5;
-
         }
 
         .social-wrapper {
