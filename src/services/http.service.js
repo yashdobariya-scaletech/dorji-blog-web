@@ -6,7 +6,7 @@ export const API_CONFIG = {
   baseUrl: "https://711c-2401-4900-1c80-3755-9843-783-c569-db25.ngrok-free.app",
   path: {
     categories: "categories",
-    articles: "articles?populate=*",
+    articles: "articles",
     subscribeUsers: "subscribe-users",
   },
 };

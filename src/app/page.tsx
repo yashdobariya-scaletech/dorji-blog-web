@@ -1,7 +1,5 @@
 "use client";
 import BlogCard from "@/components/blogCard";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 import Subscribe from "@/components/subscribe";
 import Tabs from "@/components/tabs";
 import TopBanner from "@/components/topBanner";
@@ -41,9 +39,9 @@ const Home = () => {
   const getArticlesInfo = () => {
     let params;
     if (activeTab === "ALL") {
-      params = "";
+      params = "?populate=*";
     } else {
-      params = `&filters[categories][title][$eqi]=${activeTab}`;
+      params = `?populate=*&filters[categories][title][$eqi]=${activeTab}`;
     }
     HttpService.get(`${API_CONFIG.path.articles}${params}`)
       .then((response: any) => {
@@ -86,7 +84,6 @@ const Home = () => {
 
   return (
     <>
-      <Header />
       <TopBanner />
       <div className='blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130'>
         {categoriesList.length > 0 && (
@@ -103,7 +100,6 @@ const Home = () => {
         handleOnChange={handleOnChange}
         subscribeUser={subscribeUser}
       />
-      <Footer />
     </>
   );
 };
