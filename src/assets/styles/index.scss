@@ -75,8 +75,6 @@ a {
     height: 100vh;
     backdrop-filter: blur(10px);
     will-change: backdrop-filter;
-    // background: #000;
-    // opacity: 0.2;
   }
 
   ul {
@@ -92,12 +90,35 @@ a {
 .top-banner-section {
   width: 100%;
   height: 100vh;
-  background-image: url("../images/Rectangle\ 6.png");
   object-fit: cover;
   -o-object-fit: cover;
   background-position: start center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  .slick-slider {
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+
+    .slick-list {
+      height: 100%;
+
+      .slick-track {
+        height: 100%;
+
+        .slick-slide {
+          div {
+            height: 100%;
+
+            .banner-section-bg-img {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
 
   .welcome-title-slide-wrapper {
     .welcome-section-wrapper {
@@ -122,6 +143,7 @@ a {
           animation: blink-caret 0.75s step-end infinite;
 
           @keyframes blink-caret {
+
             from,
             to {
               background-color: transparent;
@@ -140,6 +162,13 @@ a {
       color: #fff;
       margin: 0px 0px 56px 200px;
 
+      .slick-slider {
+        display: flex;
+        width: 432px;
+
+        height: auto;
+      }
+
       .feature-blog-wrapper {
         gap: 20px;
         writing-mode: vertical-lr;
@@ -155,6 +184,7 @@ a {
 
       .blog-slider-description {
         gap: 10px;
+        display: flex !important;
 
         .double-quotes {
           color: #0243c1;
@@ -251,7 +281,6 @@ a {
         background: rgba(255, 255, 255, 0.4);
         outline: none;
         color: #0f1a2e;
-        // opacity: 0.5;
         width: 522px;
         height: 38px;
 
