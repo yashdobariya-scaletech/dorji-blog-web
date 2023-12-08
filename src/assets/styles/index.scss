@@ -92,12 +92,41 @@ a {
 .top-banner-section {
   width: 100%;
   height: 100vh;
-  background-image: url("../images/Rectangle\ 6.png");
+  // background-color: #B3BCCA;
+  // background-image: url("../images/Rectangle\ 6.png");
   object-fit: cover;
   -o-object-fit: cover;
   background-position: start center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  // .banner-section-bg-img {
+  //   background-image: url('https://source.unsplash.com/random/1920x1080/?wallpaper,landscape');
+  // }
+  .slick-slider {
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+
+    .slick-list {
+      height: 100%;
+
+      .slick-track {
+        height: 100%;
+
+        .slick-slide {
+          div {
+            height: 100%;
+
+            .banner-section-bg-img {
+              height: 100%;
+              //             background: #c93e2975;
+            }
+          }
+        }
+      }
+    }
+  }
 
   .welcome-title-slide-wrapper {
     .welcome-section-wrapper {
@@ -119,17 +148,19 @@ a {
           width: 5px;
           height: 75px;
           background-color: #fff;
-          animation: blink-caret 0.75s step-end infinite;
+          animation: blink-caret .75s step-end infinite;
 
           @keyframes blink-caret {
+
             from,
             to {
-              background-color: transparent;
+              background-color: transparent
             }
 
             50% {
               background-color: #fff;
             }
+
           }
         }
       }
@@ -140,6 +171,13 @@ a {
       color: #fff;
       margin: 0px 0px 56px 200px;
 
+      .slick-slider {
+        display: flex;
+        width: 432px;
+
+        height: auto;
+      }
+
       .feature-blog-wrapper {
         gap: 20px;
         writing-mode: vertical-lr;
@@ -149,24 +187,26 @@ a {
           width: 2px;
           height: 100px;
           writing-mode: vertical-lr;
-          background-color: #0243c1;
+          background-color: #0243C1;
         }
       }
 
       .blog-slider-description {
         gap: 10px;
+        display: flex !important;
 
         .double-quotes {
-          color: #0243c1;
+          color: #0243C1;
           font-size: 60px;
           line-height: 45px;
         }
       }
+
     }
   }
 }
 
-.blog-tabs-content-section {
+z .blog-tabs-content-section {
   gap: 60px;
 
   .blog-tabs-wrapper {

@@ -209,6 +209,20 @@
         }
     }
 
+    .top-banner-section {
+        .welcome-title-slide-wrapper {
+            .slider-content-wrapper {
+                gap: 20px;
+
+                .slick-slider {
+                    width: 240px;
+                }
+            }
+        }
+    }
+
+
+
     .interested-section {
         height: auto;
         padding: 40px 20px;
