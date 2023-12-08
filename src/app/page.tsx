@@ -14,18 +14,30 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useRef, useState } from "react";
+import {
+    RefObject as ReactRefObject,
+    useEffect,
+    useRef,
+    useState,
+} from "react";
 import { SassColor } from "sass";
 
 export default function Home() {
-    let [nav1, setNav1] = useState(null);
-    let [nav2, setNav2] = useState(null);
-    let sliderRef1 = useRef(null);
-    let sliderRef2 = useRef(null);
+    const [nav1, setNav1] = useState({} as any);
+    const [nav2, setNav2] = useState({} as any);
+    // const sliderRef1: ((prevState: null) => null) | never[] | null = [];
+    // const sliderRef2: ((prevState: null) => null) | never[] | null = [];
+
+    // useEffect(() => {
+    //     setNav1(sliderRef1 as any);
+    //     setNav2(sliderRef2 as any);
+    // }, []);
+    const slider1 = useRef(null);
+    const slider2 = useRef(null);
 
     useEffect(() => {
-        setNav1(sliderRef1);
-        setNav2(sliderRef2);
+        setNav1(slider1.current);
+        setNav2(slider2.current);
     }, []);
     const settingsMain = {
         slidesToShow: 1,
@@ -134,11 +146,12 @@ export default function Home() {
             <div className="top-banner-section position--relative pt-85">
                 <Slider
                     {...settingsMain}
+                    // asNavFor={nav2 as any}
+                    // ref={sliderRef1 as any}
                     asNavFor={nav2}
-                    ref={(slider) => (sliderRef1 = slider)}
+                    ref={slider1 !== null ? slider1 : undefined}
                 >
                     {demo.map((demoContent) => {
-                        console.log(demoContent.color);
                         return (
                             <div
                                 className="banner-section-bg-img position--absolute top--0 left--0 full-width full-height"
@@ -179,8 +192,10 @@ export default function Home() {
                         </div>
                         <Slider
                             {...settingsThumbs}
+                            // asNavFor={nav1 as any}
+                            // ref={sliderRef1 as any}
                             asNavFor={nav1}
-                            ref={(slider) => (sliderRef2 = slider)}
+                            ref={slider2}
                         >
                             <div className="blog-slider-description d-flex justify-content--center align-items-end">
                                 <p className="slider-description-text">
