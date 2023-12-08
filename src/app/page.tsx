@@ -6,13 +6,14 @@ import Subscribe from "@/components/subscribe";
 import Tabs from "@/components/tabs";
 import TopBanner from "@/components/topBanner";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { API_CONFIG, HttpService } from "../services/http.service";
 
 const Home = () => {
   const [categoriesList, setCategoriesList] = useState([]);
   const [articlesList, setArticlesList] = useState({} as any);
   const [activeTab, setActiveTab] = useState<string>("ALL");
-  const [subscribeUserEmail, setSubscribeUserEmail] = useState<string>("ALL");
+  const [subscribeUserEmail, setSubscribeUserEmail] = useState<string>("");
 
   useEffect(() => {
     getCategoriesData();
@@ -54,18 +55,21 @@ const Home = () => {
   };
 
   const subscribeUser = () => {
-    const payload = {
-      data: {
-        email: subscribeUserEmail,
-      },
-    };
-    HttpService.post(API_CONFIG.path.subscribeUsers, payload)
-      .then((response: any) => {
-        setArticlesList(response);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    if (subscribeUserEmail) {
+      const payload = {
+        data: {
+          email: subscribeUserEmail,
+        },
+      };
+      HttpService.post(API_CONFIG.path.subscribeUsers, payload)
+        .then(() => {
+          toast.success("Successfully subscribed");
+          setSubscribeUserEmail("");
+        })
+        .catch((e) => {
+          toast.error(e.response.data.error.message);
+        });
+    }
   };
 
   const handleTabChange = (incomingTab: string) => {
@@ -95,6 +99,7 @@ const Home = () => {
         <BlogCard articlesList={articlesList.data} />
       </div>
       <Subscribe
+        subscribeUserEmail={subscribeUserEmail}
         handleOnChange={handleOnChange}
         subscribeUser={subscribeUser}
       />

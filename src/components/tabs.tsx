@@ -26,8 +26,8 @@ const Tabs: React.FC<Props> = (props) => {
             onClick={onClick}
             className={
               props.activeTab === tab || tab === props.activeTabName
-                ? "btn-active m-5"
-                : "m-5"
+                ? "btn-active mx-10"
+                : "mx-10"
             }
             key={`${tab}${index}`}
           >
