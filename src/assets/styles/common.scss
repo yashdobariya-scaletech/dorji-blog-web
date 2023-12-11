@@ -1191,3 +1191,24 @@
   height: 100%;
   width: 100%;
 }
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: end;
+  li {
+    margin: 0px 5px;
+    a {
+      cursor: pointer;
+      padding: 10px;
+    }
+    &:hover {
+      border-radius: 25%;
+      background: #e7e9eb;
+    }
+    &.selected {
+      background: #0243c1;
+      border-radius: 25%;
+      color: white;
+    }
+  }
+}

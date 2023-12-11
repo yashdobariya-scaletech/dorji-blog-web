@@ -5,6 +5,7 @@ import Tabs from "@/components/tabs";
 import TopBanner from "@/components/topBanner";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import ReactPaginate from "react-paginate";
 import { API_CONFIG, HttpService } from "../services/http.service";
 
 const Home = () => {
@@ -12,6 +13,11 @@ const Home = () => {
   const [articlesList, setArticlesList] = useState({} as any);
   const [activeTab, setActiveTab] = useState<string>("ALL");
   const [subscribeUserEmail, setSubscribeUserEmail] = useState<string>("");
+  const [pagination, setPagination] = useState({
+    page: 1,
+    pageCount: 1,
+    pageSize: 2,
+  });
 
   useEffect(() => {
     getCategoriesData();
@@ -36,16 +42,21 @@ const Home = () => {
       });
   };
 
-  const getArticlesInfo = () => {
+  const getArticlesInfo = (page = 1) => {
     let params;
     if (activeTab === "ALL") {
-      params = "?populate=*";
+      params = `?populate=*&pagination[page]=${page}&pagination[pageSize]=${pagination.pageSize}`;
     } else {
-      params = `?populate=*&filters[categories][title][$eqi]=${activeTab}`;
+      params = `?populate=*&pagination[page]=${page}&pagination[pageSize]=${pagination.pageSize}&filters[categories][title][$eqi]=${activeTab}`;
     }
     HttpService.get(`${API_CONFIG.path.articles}${params}`)
       .then((response: any) => {
-        setArticlesList(response);
+        setArticlesList(response.data);
+        if (response.meta.pagination.pageCount === 0) {
+          setPagination({ ...pagination, pageCount: 1 });
+        } else {
+          setPagination(response.meta.pagination);
+        }
       })
       .catch((e) => {
         console.log(e);
@@ -82,6 +93,12 @@ const Home = () => {
     }
   };
 
+  const handlePageClick = (page: number) => {
+    if (page) {
+      getArticlesInfo(page);
+    }
+  };
+
   return (
     <>
       <TopBanner />
@@ -93,7 +110,17 @@ const Home = () => {
             handleTabChange={handleTabChange}
           />
         )}
-        <BlogCard articlesList={articlesList.data} />
+        <BlogCard articlesList={articlesList} />
+        <ReactPaginate
+          className='pagination-wrapper'
+          breakLabel='...'
+          nextLabel='>'
+          pageRangeDisplayed={2}
+          marginPagesDisplayed={1}
+          pageCount={pagination.pageCount}
+          previousLabel='<'
+          onPageChange={(e) => handlePageClick(e.selected + 1)}
+        />
       </div>
       <Subscribe
         subscribeUserEmail={subscribeUserEmail}
