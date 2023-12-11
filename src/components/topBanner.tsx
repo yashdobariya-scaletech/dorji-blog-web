@@ -16,6 +16,7 @@ const TopBanner = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
+        speed: 1500,
         fade: true,
         asNavFor: ".slider-nav",
     };
@@ -26,8 +27,10 @@ const TopBanner = () => {
         asNavFor: ".slider-for",
         dots: false,
         arrows: false,
+        speed: 1500,
+        // fade: true,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 6000,
     };
     const demo = [
         {
@@ -62,7 +65,7 @@ const TopBanner = () => {
                             <div
                                 style={{
                                     color: "white",
-                                    backgroundImage: `url(${demoContent.imgUrl})`,
+                                    backgroundImage: `url(${demoContent?.imgUrl})`,
                                     backgroundPosition: " bottom center",
                                     backgroundSize: "cover",
                                 }}
@@ -83,7 +86,9 @@ const TopBanner = () => {
 
                 <div className="slider-content-wrapper d-flex align-items-end justify-content--center">
                     <div className="feature-blog-wrapper d-flex align-items-center">
-                        <p className="feature-text">Featured Blogs</p>
+                        <p className="feature-text font-weight--600 font-size-20">
+                            Featured Blogs
+                        </p>
                         <div className="feature-design"></div>
                     </div>
                     <Slider
@@ -92,8 +97,12 @@ const TopBanner = () => {
                         ref={slider2}
                     >
                         <div className="blog-slider-description d-flex justify-content--flex-start align-items-end">
-                            <p className="slider-description-text">
-                                Bless me into <span>Usefulness</span> . <br />
+                            <p className="slider-description-text font-size-22">
+                                Bless me into{" "}
+                                <span className="font-weight--600">
+                                    Usefulness
+                                </span>{" "}
+                                . <br />
                                 May you all be blessed into Usefulness.
                             </p>
                             <p className="double-quotes d-flex justify-content--center align-items-end">
@@ -101,8 +110,12 @@ const TopBanner = () => {
                             </p>
                         </div>
                         <div className="blog-slider-description d-flex justify-content--flex-start align-items-end">
-                            <p className="slider-description-text">
-                                Bless me into <span>Usefulness</span> . <br />
+                            <p className="slider-description-text font-size-22">
+                                Bless me into{" "}
+                                <span className="font-weight--600">
+                                    Usefulness
+                                </span>{" "}
+                                . <br />
                                 May you all be blessed into Usefulness.
                             </p>
                             <p className="double-quotes d-flex justify-content--center align-items-end">
@@ -110,8 +123,12 @@ const TopBanner = () => {
                             </p>
                         </div>
                         <div className="blog-slider-description d-flex justify-content--flex-start align-items-end">
-                            <p className="slider-description-text">
-                                Bless me into <span>Usefulness</span> . <br />
+                            <p className="slider-description-text font-size-22">
+                                Bless me into{" "}
+                                <span className="font-weight--600">
+                                    Usefulness
+                                </span>{" "}
+                                . <br />
                                 May you all be blessed into Usefulness.
                             </p>
                             <p className="double-quotes d-flex justify-content--center align-items-end">

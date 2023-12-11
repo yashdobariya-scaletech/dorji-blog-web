@@ -7,6 +7,14 @@
         gap: 0px 100px;
     }
 
+    .header-dark-theme-wrapper {
+        .container {
+            .logo-nav_links-wrapper {
+                gap: 0px 100px;
+            }
+        }
+    }
+
     .top-banner-section {
         .welcome-title-slide-wrapper {
             .slider-content-wrapper {
@@ -51,6 +59,20 @@
             .navbar {
                 gap: 0px 25px;
                 color: #fff;
+            }
+        }
+    }
+
+    .header-dark-theme-wrapper {
+        .container {
+            .logo-nav_links-wrapper {
+                gap: 0px 50px;
+
+                .nav_links-wrapper {
+                    .navbar {
+                        gap: 0px 25px;
+                    }
+                }
             }
         }
     }
@@ -117,6 +139,24 @@
 
     .sidenav-icon-wrapper {
         display: block;
+    }
+
+    .header-dark-theme-wrapper {
+        .container {
+            .logo-nav_links-wrapper {
+                .nav_links-wrapper {
+                    display: none;
+                }
+            }
+
+            .search-wrapper {
+                width: 240px;
+            }
+
+            .sidenav-icon-wrapper {
+                display: block;
+            }
+        }
     }
 
     .top-banner-section {

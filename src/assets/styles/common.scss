@@ -33,18 +33,16 @@
   width: 100%;
   margin: 0 auto;
   backdrop-filter: blur(20px);
-
+  transition-duration: 2s;
   will-change: backdrop-filter;
   z-index: 99;
 }
 
 .home-header {
   height: 500px;
-  background: linear-gradient(
-    180deg,
-    rgba(235, 60, 91, 0.5) -203.1%,
-    rgba(11, 11, 11, 0.5) 68.41%
-  );
+  background: linear-gradient(180deg,
+      rgba(235, 60, 91, 0.5) -203.1%,
+      rgba(11, 11, 11, 0.5) 68.41%);
 }
 
 .is-scroll {
@@ -191,6 +189,10 @@
 
 .text-align--center {
   text-align: center;
+}
+
+.text-align--right {
+  text-align: right;
 }
 
 .list-style-type--roman {
@@ -1150,25 +1152,25 @@
 }
 
 .custom-tabs {
+  gap: 40px;
   background-color: white !important;
 
-  .btn-active {
-    border-bottom: 2px solid red !important;
-    background-color: white;
-    color: black;
-  }
-
-  button {
+  .tabs-btn {
+    // border: 2px solid transparent;
     text-transform: uppercase;
     margin-bottom: 0 !important;
     cursor: pointer !important;
-    border-radius: 0;
     border: 0 !important;
-    border-bottom: 2px solid transparent;
+    color: #B3BCCA;
+    font-family: Playfair Display !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    background: #fff !important;
+    border-bottom: 2px solid transparent !important;
 
     &:hover {
       background: white;
-      border-bottom: 2px solid red !important;
+      border-bottom: 2px solid #0243C1 !important;
     }
 
     &:focus {
@@ -1177,6 +1179,15 @@
       outline: 0;
     }
   }
+
+  .tabs-btn-active {
+    border-bottom: 2px solid #0243C1 !important;
+    background-color: white;
+    color: #0F1A2E;
+  }
+
+
+
   .btn {
     padding: 12px 12px;
   }
