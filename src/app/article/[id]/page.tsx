@@ -21,9 +21,10 @@ const ArticlesDetails = () => {
   };
 
   return (
-    <div className='ck-content pt-30 pb-30 mt-60'>
+    <div className='p--20  mt-60'>
       {articlesDetails && (
         <div
+          className='ck-content'
           dangerouslySetInnerHTML={{
             __html: articlesDetails.attributes?.description,
           }}

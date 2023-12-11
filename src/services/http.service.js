@@ -3,7 +3,7 @@ import queryString from "query-string";
 const axiosInstance = axios.create();
 
 export const API_CONFIG = {
-  baseUrl: "https://711c-2401-4900-1c80-3755-9843-783-c569-db25.ngrok-free.app",
+  baseUrl: "http://192.168.1.97:1337",
   path: {
     categories: "categories",
     articles: "articles",
