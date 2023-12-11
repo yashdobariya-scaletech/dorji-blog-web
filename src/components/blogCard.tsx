@@ -1,4 +1,5 @@
 import { CalendarIcon } from "@/assets/icons/icon";
+import Image from "next/image";
 import Link from "next/link";
 import { formatDate } from "./utils";
 
@@ -17,20 +18,16 @@ const BlogCard: React.FC<Props> = (props) => {
                 className='blog-content-wrapper position--relative'
               >
                 <Link href={`article/${item.id}`}>
-                  {/* <Image
-              src={`http://localhost:1337${item.attributes.previewImage.data.attributes.url}`}
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-              }}
-              alt='Culture'
-            /> */}
-                  <img
-                    className='preview-image-wrapper'
+                  <Image
+                    width={500}
+                    height={500}
                     src={`http://192.168.1.97:1337${item.attributes.previewImage.data.attributes.url}`}
-                    alt='Description of the image'
-                    width='500'
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                    alt='Culture'
                   />
                   <div className='content-description-wrapper position--absolute full-height d-flex justify-content-space-between flex-direction--column full-width top--0 left--0'>
                     <div className='blog-type-wrapper full-width d-flex align-items-center justify-content-end'>
