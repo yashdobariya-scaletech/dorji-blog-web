@@ -28,6 +28,7 @@ a {
   gap: 0px 200px;
 
   .nav_links-wrapper {
+
     .navbar {
       gap: 0px 50px;
       color: #fff;
@@ -35,10 +36,63 @@ a {
       .nav-links {
         border-bottom: 2px solid transparent;
         opacity: 0.5;
+        font-weight: 400;
+        font-family: Open Sans;
 
         &:active {
           opacity: 1;
           border-bottom: 2px solid #c93e29;
+
+        }
+      }
+    }
+  }
+}
+
+.header-dark-theme-wrapper {
+  background-color: #fff;
+
+  .container {
+    .logo-nav_links-wrapper {
+
+      gap: 0px 200px;
+
+      .nav_links-wrapper {
+        .navbar {
+          gap: 0px 50px;
+          color: #0F1A2E;
+
+          .nav-links {
+            border-bottom: 2px solid transparent;
+            opacity: 0.5;
+            font-family: Open Sans;
+
+            &:active {
+              opacity: 1;
+              border-bottom: 2px solid #c93e29;
+            }
+          }
+        }
+      }
+    }
+
+    .search-wrapper {
+      width: 303px;
+      background: rgba(15, 26, 46, 0.10);
+
+      .search-input {
+        font-family: Open Sans;
+        outline: none;
+        color: #0F1A2E;
+        background: transparent;
+
+        &::placeholder {
+          font-family: Open Sans;
+          font-size: 14px;
+          opacity: 0.5;
+          color: #0F1A2E;
+          background: transparent;
+
         }
       }
     }
@@ -50,16 +104,18 @@ a {
   background: rgba(255, 255, 255, 0.1);
 
   .search-input {
+    font-family: Open Sans;
     outline: none;
     color: #fff;
-
     background: transparent;
 
     &::placeholder {
+      font-family: Open Sans;
       font-size: 14px;
       opacity: 0.5;
       color: #fff;
       background: transparent;
+
     }
   }
 }
@@ -123,11 +179,13 @@ a {
   .welcome-title-slide-wrapper {
     .welcome-section-wrapper {
       .welcome-text {
+        font-family: Playfair Display;
         color: #fff;
       }
 
       .mannkibata-text {
         color: #fff;
+        font-family: Playfair Display;
         letter-spacing: 1.2px;
         position: relative;
 
@@ -163,9 +221,8 @@ a {
       margin: 0px 0px 56px 200px;
 
       .slick-slider {
-        display: flex;
-        width: 432px;
-
+        // display: flex;
+        width: 496px;
         height: auto;
       }
 
@@ -173,6 +230,12 @@ a {
         gap: 20px;
         writing-mode: vertical-lr;
         transform: rotate(180deg);
+
+        .feature-text {
+          color: #D4DAE6;
+          font-family: Playfair Display;
+          opacity: .5;
+        }
 
         .feature-design {
           width: 2px;
@@ -184,9 +247,20 @@ a {
 
       .blog-slider-description {
         gap: 10px;
+        width: 496px;
+        align-items: flex-start;
         display: flex !important;
 
+        .slider-description-text {
+          font-family: Open Sans;
+
+          span {
+            font-style: italic;
+          }
+        }
+
         .double-quotes {
+          font-family: Playfair Display;
           color: #0243c1;
           font-size: 60px;
           line-height: 45px;
@@ -219,14 +293,19 @@ a {
 
   .blogs-wrapper {
     display: grid;
-    gap: 40px;
-    grid-template-columns: 25% 25% 25% 25%;
+    width: 100%;
+    gap: 30px;
+    grid-template-columns: 22% 22% 22% 22%;
 
     .blog-content-wrapper {
       width: 100%;
+      // max-width: 25%;
+      // min-width: 25%;
       height: 400px;
 
       .content-description-wrapper {
+        // max-width: 25%;
+        width: 100%;
         background: rgba(0, 0, 0, 0.5);
 
         .blog-type-wrapper {
@@ -235,6 +314,7 @@ a {
           .blog-type-text {
             height: 29px;
             width: 62px;
+            font-family: Open Sans;
             color: #fff;
             background: #0243c1;
           }
@@ -242,6 +322,7 @@ a {
 
         .blog-title {
           color: #fff;
+          font-family: Open Sans;
           text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.2);
         }
 
@@ -254,12 +335,22 @@ a {
             color: #d4dae6;
 
             .date-text {
+              font-family: Open Sans;
+              color: #d4dae6;
+            }
+
+            .reade-time-text {
+              font-family: Open Sans;
               color: #d4dae6;
             }
           }
         }
       }
     }
+  }
+
+  .no-data-found {
+    font-family: Open Sans;
   }
 }
 
@@ -271,6 +362,7 @@ a {
     width: 1280px;
 
     .updates-text {
+      font-family: Playfair Display;
       color: #0f1a2e;
     }
 
@@ -278,6 +370,7 @@ a {
       gap: 20px;
 
       .input-your-email-address {
+        font-family: Open Sans;
         background: rgba(255, 255, 255, 0.4);
         outline: none;
         color: #0f1a2e;
@@ -285,12 +378,16 @@ a {
         height: 38px;
 
         &::placeholder {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: Open Sans;
           color: #0f1a2e;
           opacity: 0.5;
         }
       }
 
       .email-sand-btn {
+        font-family: Open Sans;
         width: 190px;
         height: 38px;
         background: #c93e29;
@@ -323,11 +420,14 @@ a {
             gap: 20px;
 
             .mannkibaat-by-text {
+              font-family: Open Sans;
               color: #fff;
               opacity: 0.5;
+              line-height: 11px;
             }
 
             .mannkibaat-by-name-text {
+              font-family: Playfair Display;
               color: #fff;
               line-height: 21px;
             }
@@ -340,7 +440,11 @@ a {
 
             .footer-nav-links {
               .footer-links {
+                font-family: Open Sans;
+                font-size: 16px;
+                font-weight: 400;
                 color: #fff;
+                opacity: .5;
               }
             }
           }
@@ -351,6 +455,7 @@ a {
         gap: 20px;
 
         .social-text {
+          font-family: Open Sans;
           color: #fff;
           opacity: 0.5;
         }
