@@ -7,21 +7,28 @@ import Tabs from "@/components/tabs";
 import TopBanner from "@/components/topBanner";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import ReactPaginate from "react-paginate";
 import { API_CONFIG, HttpService } from "../services/http.service";
 
 const Home = () => {
+    const [headerChange, setHeaderChange] = useState(false);
     const [categoriesList, setCategoriesList] = useState([]);
-    const [articlesList, setArticlesList] = useState({} as any);
+    const [featuredArticlesList, setFeaturedArticlesList] = useState<
+        ArticleInfo[]
+    >([]);
+    const [articlesList, setArticlesList] = useState<ArticleInfo[]>([]);
     const [activeTab, setActiveTab] = useState<string>("ALL");
     const [subscribeUserEmail, setSubscribeUserEmail] = useState<string>("");
-    const [headerChange, setHeaderChange] = useState(false);
+    const [pagination, setPagination] = useState({
+        page: 1,
+        pageCount: 1,
+        pageSize: 2,
+    });
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener("scroll", () =>
-                setHeaderChange(window.pageYOffset > window.innerHeight)
-            );
-        }
+        getCategoriesData();
+        getArticlesInfo();
+        getFeaturedArticlesInfo();
     }, []);
 
     useEffect(() => {
@@ -32,6 +39,14 @@ const Home = () => {
     useEffect(() => {
         getArticlesInfo();
     }, [activeTab]);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.addEventListener("scroll", () =>
+                setHeaderChange(window.pageYOffset > window.innerHeight)
+            );
+        }
+    }, []);
 
     const getCategoriesData = () => {
         HttpService.get(API_CONFIG.path.categories)
@@ -46,17 +61,33 @@ const Home = () => {
                 console.log(e);
             });
     };
-
-    const getArticlesInfo = () => {
+    const getArticlesInfo = (page = 1) => {
         let params;
         if (activeTab === "ALL") {
-            params = "";
+            params = `?populate=*&pagination[page]=${page}&pagination[pageSize]=${pagination.pageSize}`;
         } else {
-            params = `&filters[categories][title][$eqi]=${activeTab}`;
+            params = `?populate=*&pagination[page]=${page}&pagination[pageSize]=${pagination.pageSize}&filters[categories][title][$eqi]=${activeTab}`;
         }
         HttpService.get(`${API_CONFIG.path.articles}${params}`)
             .then((response: any) => {
-                setArticlesList(response);
+                setArticlesList(response.data);
+                if (response.meta.pagination.pageCount === 0) {
+                    setPagination({ ...pagination, pageCount: 1 });
+                } else {
+                    setPagination(response.meta.pagination);
+                }
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+    };
+
+    const getFeaturedArticlesInfo = () => {
+        HttpService.get(
+            `${API_CONFIG.path.articles}?populate=*&pagination[page]=1&pagination[pageSize]=4&filters[featured][$eqi]=true&sort[0]=createdAt:desc`
+        )
+            .then((response: any) => {
+                setFeaturedArticlesList(response.data);
             })
             .catch((e) => {
                 console.log(e);
@@ -93,14 +124,16 @@ const Home = () => {
         }
     };
 
+    const handlePageClick = (page: number) => {
+        if (page) {
+            getArticlesInfo(page);
+        }
+    };
+
     return (
         <>
-            {headerChange ? <DarkHeader /> : <LightHeader />}
-            <TopBanner />
-            <div
-                id="blog"
-                className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130"
-            >
+            <TopBanner featuredArticlesList={featuredArticlesList} />
+            <div className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130">
                 {categoriesList.length > 0 && (
                     <Tabs
                         tabs={categoriesList}
@@ -108,14 +141,23 @@ const Home = () => {
                         handleTabChange={handleTabChange}
                     />
                 )}
-                <BlogCard articlesList={articlesList.data} />
+                <BlogCard articlesList={articlesList} />
+                <ReactPaginate
+                    className="pagination-wrapper"
+                    breakLabel="..."
+                    nextLabel=">"
+                    pageRangeDisplayed={2}
+                    marginPagesDisplayed={1}
+                    pageCount={pagination.pageCount}
+                    previousLabel="<"
+                    onPageChange={(e) => handlePageClick(e.selected + 1)}
+                />
             </div>
             <Subscribe
                 subscribeUserEmail={subscribeUserEmail}
                 handleOnChange={handleOnChange}
                 subscribeUser={subscribeUser}
             />
-            <Footer />
         </>
     );
 };
