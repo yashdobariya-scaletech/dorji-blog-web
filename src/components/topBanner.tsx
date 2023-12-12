@@ -100,7 +100,7 @@ const TopBanner: React.FC<Props> = (props) => {
         </div>
         <div className='slider-content-wrapper d-flex align-items-end justify-content--center'>
           <div className='feature-blog-wrapper d-flex align-items-center'>
-            <p className='feature-text'>Featured Blogs</p>
+            <p className='feature-text font-size-22 font-weight--400'>Featured Blogs</p>
             <div className='feature-design'></div>
           </div>
           <Slider {...settingsThumbs} asNavFor={nav1} ref={slider2}>
@@ -112,7 +112,7 @@ const TopBanner: React.FC<Props> = (props) => {
                     key={index}
                     className='blog-slider-description d-flex justify-content--flex-start align-items-end'
                   >
-                    <p className='slider-description-text'>
+                    <p className='slider-description-text font-size-25'>
                       {item.attributes.title}
                     </p>
                     <p className='double-quotes d-flex justify-content--center align-items-end'>
