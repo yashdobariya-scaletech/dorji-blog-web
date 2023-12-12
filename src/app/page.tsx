@@ -10,7 +10,10 @@ import { API_CONFIG, HttpService } from "../services/http.service";
 
 const Home = () => {
   const [categoriesList, setCategoriesList] = useState([]);
-  const [articlesList, setArticlesList] = useState({} as any);
+  const [featuredArticlesList, setFeaturedArticlesList] = useState<
+    ArticleInfo[]
+  >([]);
+  const [articlesList, setArticlesList] = useState<ArticleInfo[]>([]);
   const [activeTab, setActiveTab] = useState<string>("ALL");
   const [subscribeUserEmail, setSubscribeUserEmail] = useState<string>("");
   const [pagination, setPagination] = useState({
@@ -22,6 +25,7 @@ const Home = () => {
   useEffect(() => {
     getCategoriesData();
     getArticlesInfo();
+    getFeaturedArticlesInfo();
   }, []);
 
   useEffect(() => {
@@ -57,6 +61,18 @@ const Home = () => {
         } else {
           setPagination(response.meta.pagination);
         }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  const getFeaturedArticlesInfo = () => {
+    HttpService.get(
+      `${API_CONFIG.path.articles}?populate=*&pagination[page]=1&pagination[pageSize]=4&filters[featured][$eqi]=true&sort[0]=createdAt:desc`
+    )
+      .then((response: any) => {
+        setFeaturedArticlesList(response.data);
       })
       .catch((e) => {
         console.log(e);
@@ -101,7 +117,7 @@ const Home = () => {
 
   return (
     <>
-      <TopBanner />
+      <TopBanner featuredArticlesList={featuredArticlesList} />
       <div className='blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130'>
         {categoriesList.length > 0 && (
           <Tabs

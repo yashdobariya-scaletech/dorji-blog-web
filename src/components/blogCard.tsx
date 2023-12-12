@@ -4,7 +4,7 @@ import Link from "next/link";
 import { formatDate } from "./utils";
 
 interface Props {
-  articlesList: any;
+  articlesList: ArticleInfo[];
 }
 const BlogCard: React.FC<Props> = (props) => {
   return (
