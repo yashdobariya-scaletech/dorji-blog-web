@@ -22,6 +22,7 @@ const TopBanner: React.FC<Props> = (props) => {
         slidesToScroll: 1,
         arrows: false,
         fade: true,
+        speed: 1500,
         asNavFor: ".slider-nav",
     };
 
@@ -32,6 +33,7 @@ const TopBanner: React.FC<Props> = (props) => {
         dots: false,
         arrows: false,
         autoplay: true,
+        speed: 1500,
         autoplaySpeed: 5000,
     };
 
@@ -55,15 +57,14 @@ const TopBanner: React.FC<Props> = (props) => {
                                         style={{
                                             color: "white",
                                             backgroundImage: `url(http://192.168.1.97:1337${item.attributes.previewImage.data.attributes.url})`,
-                                            backgroundPosition:
-                                                " bottom center",
+                                            backgroundPosition: "center center",
                                             backgroundSize: "cover",
                                         }}
                                     >
                                         <div
                                             style={{
                                                 backgroundColor:
-                                                    "rgba(0, 0, 0, 0.30)",
+                                                    "rgba(0, 0, 0, 0.40)",
                                                 backdropFilter: "blur(2px)",
                                             }}
                                         ></div>
@@ -85,7 +86,9 @@ const TopBanner: React.FC<Props> = (props) => {
 
                 <div className="slider-content-wrapper d-flex align-items-end justify-content--center">
                     <div className="feature-blog-wrapper d-flex align-items-center">
-                        <p className="feature-text">Featured Blogs</p>
+                        <p className="feature-text font-size-20 font-weight--600">
+                            Featured Blogs
+                        </p>
                         <div className="feature-design"></div>
                     </div>
                     <Slider
@@ -102,7 +105,7 @@ const TopBanner: React.FC<Props> = (props) => {
                                             key={index}
                                             className="blog-slider-description d-flex justify-content--flex-start align-items-end"
                                         >
-                                            <p className="slider-description-text">
+                                            <p className="slider-description-text font-size-22 font-weight--400">
                                                 {item.attributes.title}
                                             </p>
                                             <p className="double-quotes d-flex justify-content--center align-items-end">

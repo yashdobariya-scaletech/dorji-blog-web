@@ -21,7 +21,7 @@ const LightHeader = () => {
                             <nav className="navbar d-flex">
                                 <a
                                     href="#"
-                                    className="nav-links pt-10 pb-10"
+                                    className="nav-links active-light-header-nav-links pt-10 pb-10"
                                 >
                                     Home
                                 </a>
@@ -90,7 +90,7 @@ const DarkHeader = () => {
                             <nav className="navbar d-flex">
                                 <a
                                     href="#"
-                                    className="nav-links pt-10 pb-10"
+                                    className="active-dark-header-nav-links nav-links pt-10 pb-10"
                                 >
                                     Home
                                 </a>

@@ -74,7 +74,7 @@ const BlogCard: React.FC<Props> = (props) => {
             </div>
             {props.articlesList.length <= 0 && (
                 <>
-                    <div className="no-data-found full-width font-size-16 text-align--center">
+                    <div className="no-data-found full-width font-size-18 text-align--center">
                         No data found
                     </div>
                 </>
