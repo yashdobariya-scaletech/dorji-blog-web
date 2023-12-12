@@ -10,7 +10,7 @@ const BlogCard: React.FC<Props> = (props) => {
     return (
         <div className="cursor-pointer">
             <div className="blogs-wrapper full-width">
-                {props.articlesList && props.articlesList.length > 0 ? (
+                {props.articlesList && props.articlesList.length > 0 && (
                     <>
                         {props.articlesList?.map((item: any, index: number) => (
                             <div
@@ -70,10 +70,15 @@ const BlogCard: React.FC<Props> = (props) => {
                             </div>
                         ))}
                     </>
-                ) : (
-                    <div>No data found</div>
                 )}
             </div>
+            {props.articlesList.length <= 0 && (
+                <>
+                    <div className="no-data-found full-width font-size-18 text-align--center">
+                        No data found
+                    </div>
+                </>
+            )}
         </div>
     );
 };

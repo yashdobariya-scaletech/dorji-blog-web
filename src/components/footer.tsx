@@ -20,7 +20,9 @@ const Footer = () => {
                         <div className="nav-links-wrapper d-flex align-items-end">
                             <ul className="footer-nav-list d-flex align-items-end">
                                 <li className="footer-nav-links">
-                                    <a className="footer-links">Home</a>
+                                    <a className="footer-links active-footer-nav-links">
+                                        Home
+                                    </a>
                                 </li>
                                 <li className="footer-nav-links">
                                     <a className="footer-links">Blogs</a>
