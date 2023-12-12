@@ -223,7 +223,6 @@ a {
       .slick-slider {
         display: flex;
         width: 496px;
-
         height: auto;
       }
 
@@ -249,6 +248,7 @@ a {
       .blog-slider-description {
         gap: 10px;
         width: 496px;
+        align-items: flex-start;
         display: flex !important;
 
         .slider-description-text {
@@ -293,14 +293,19 @@ a {
 
   .blogs-wrapper {
     display: grid;
-    gap: 40px;
-    grid-template-columns: 25% 25% 25% 25%;
+    width: 100%;
+    gap: 30px;
+    grid-template-columns: 22% 22% 22% 22%;
 
     .blog-content-wrapper {
       width: 100%;
+      // max-width: 25%;
+      // min-width: 25%;
       height: 400px;
 
       .content-description-wrapper {
+        // max-width: 25%;
+        width: 100%;
         background: rgba(0, 0, 0, 0.5);
 
         .blog-type-wrapper {
@@ -333,10 +338,19 @@ a {
               font-family: Open Sans;
               color: #d4dae6;
             }
+
+            .reade-time-text {
+              font-family: Open Sans;
+              color: #d4dae6;
+            }
           }
         }
       }
     }
+  }
+
+  .no-data-found {
+    font-family: Open Sans;
   }
 }
 
@@ -348,6 +362,7 @@ a {
     width: 1280px;
 
     .updates-text {
+      font-family: Playfair Display;
       color: #0f1a2e;
     }
 
@@ -355,6 +370,7 @@ a {
       gap: 20px;
 
       .input-your-email-address {
+        font-family: Open Sans;
         background: rgba(255, 255, 255, 0.4);
         outline: none;
         color: #0f1a2e;
@@ -362,12 +378,16 @@ a {
         height: 38px;
 
         &::placeholder {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: Open Sans;
           color: #0f1a2e;
           opacity: 0.5;
         }
       }
 
       .email-sand-btn {
+        font-family: Open Sans;
         width: 190px;
         height: 38px;
         background: #c93e29;
@@ -400,11 +420,14 @@ a {
             gap: 20px;
 
             .mannkibaat-by-text {
+              font-family: Open Sans;
               color: #fff;
               opacity: 0.5;
+              line-height: 11px;
             }
 
             .mannkibaat-by-name-text {
+              font-family: Playfair Display;
               color: #fff;
               line-height: 21px;
             }
@@ -417,7 +440,11 @@ a {
 
             .footer-nav-links {
               .footer-links {
+                font-family: Open Sans;
+                font-size: 16px;
+                font-weight: 400;
                 color: #fff;
+                opacity: .5;
               }
             }
           }
@@ -428,6 +455,7 @@ a {
         gap: 20px;
 
         .social-text {
+          font-family: Open Sans;
           color: #fff;
           opacity: 0.5;
         }

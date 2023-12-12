@@ -69,7 +69,14 @@ const TopBanner = () => {
                                     backgroundPosition: " bottom center",
                                     backgroundSize: "cover",
                                 }}
-                            ></div>
+                            >
+                                <div
+                                    style={{
+                                        backgroundColor: "rgba(0, 0, 0, 0.30)",
+                                        backdropFilter: "blur(2px)",
+                                    }}
+                                ></div>
+                            </div>
                         </div>
                     );
                 })}
@@ -96,45 +103,26 @@ const TopBanner = () => {
                         asNavFor={nav1}
                         ref={slider2}
                     >
-                        <div className="blog-slider-description d-flex justify-content--flex-start align-items-end">
-                            <p className="slider-description-text font-size-22">
-                                Bless me into{" "}
-                                <span className="font-weight--600">
-                                    Usefulness
-                                </span>{" "}
-                                . <br />
-                                May you all be blessed into Usefulness.
-                            </p>
-                            <p className="double-quotes d-flex justify-content--center align-items-end">
-                                ”
-                            </p>
-                        </div>
-                        <div className="blog-slider-description d-flex justify-content--flex-start align-items-end">
-                            <p className="slider-description-text font-size-22">
-                                Bless me into{" "}
-                                <span className="font-weight--600">
-                                    Usefulness
-                                </span>{" "}
-                                . <br />
-                                May you all be blessed into Usefulness.
-                            </p>
-                            <p className="double-quotes d-flex justify-content--center align-items-end">
-                                ”
-                            </p>
-                        </div>
-                        <div className="blog-slider-description d-flex justify-content--flex-start align-items-end">
-                            <p className="slider-description-text font-size-22">
-                                Bless me into{" "}
-                                <span className="font-weight--600">
-                                    Usefulness
-                                </span>{" "}
-                                . <br />
-                                May you all be blessed into Usefulness.
-                            </p>
-                            <p className="double-quotes d-flex justify-content--center align-items-end">
-                                ”
-                            </p>
-                        </div>
+                        {demo.map((demodetail, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    className="blog-slider-description d-flex justify-content--flex-start align-items-end"
+                                >
+                                    <p className="slider-description-text font-size-22">
+                                        Bless me into{" "}
+                                        <span className="font-weight--600">
+                                            Usefulness
+                                        </span>{" "}
+                                        . <br />
+                                        May you all be blessed into Usefulness.
+                                    </p>
+                                    <p className="double-quotes d-flex justify-content--center align-items-end">
+                                        ”
+                                    </p>
+                                </div>
+                            );
+                        })}
                     </Slider>
                 </div>
             </div>

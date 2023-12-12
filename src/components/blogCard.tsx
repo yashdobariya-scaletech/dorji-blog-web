@@ -43,7 +43,7 @@ const BlogCard: React.FC<Props> = (props) => {
                                         </p>
                                     </div>
                                     <div className="blog-title-date-wrapper">
-                                        <h2 className="blog-title font-size-30 pl-10 pr-10 font-weight--800 line-height-40">
+                                        <h2 className="blog-title font-size-28 pl-10 pr-10 font-weight--600 line-height-40">
                                             {item.attributes.title}
                                         </h2>
                                         <div className="date-wrapper d-flex align-items-center justify-content--flex-start pl-10 pr-10">
@@ -56,7 +56,7 @@ const BlogCard: React.FC<Props> = (props) => {
                                                     )}
                                                 </p>
                                                 /
-                                                <p className="reade-time-text ">
+                                                <p className="reade-time-text font-size-16 font-weight--400">
                                                     {item.attributes.readTime}
                                                 </p>
                                             </div>
@@ -69,7 +69,7 @@ const BlogCard: React.FC<Props> = (props) => {
                 )}
             </div>
             {props.articlesList && props.articlesList.length <= 0 && (
-                <div className="full-width text-align--center font-size-18">
+                <div className=" no-data-found full-width text-align--center font-size-18">
                     No data found
                 </div>
             )}
