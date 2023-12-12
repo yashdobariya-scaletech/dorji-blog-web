@@ -36,7 +36,7 @@ a {
     width: 65%;
     height: 2.5px;
     background-color: #c93e29;
-
+    
   }
 }
 
@@ -52,7 +52,6 @@ a {
     width: 65%;
     height: 2.5px;
     background-color: #c93e29;
-
   }
 }
 
@@ -65,7 +64,6 @@ a {
   gap: 0px 200px;
 
   .nav_links-wrapper {
-
     .navbar {
       gap: 0px 50px;
       color: #fff;
@@ -76,8 +74,6 @@ a {
         font-weight: 400;
         position: relative;
         font-family: Open Sans;
-
-
       }
     }
   }
@@ -89,13 +85,12 @@ a {
 
   .container {
     .logo-nav_links-wrapper {
-
       gap: 0px 200px;
 
       .nav_links-wrapper {
         .navbar {
           gap: 0px 50px;
-          color: #0F1A2E;
+          color: #0f1a2e;
 
           .nav-links {
             border-bottom: 2px solid transparent;
@@ -113,21 +108,20 @@ a {
 
     .search-wrapper {
       width: 303px;
-      background: rgba(15, 26, 46, 0.10);
+      background: rgba(15, 26, 46, 0.1);
 
       .search-input {
         font-family: Open Sans;
         outline: none;
-        color: #0F1A2E;
+        color: #0f1a2e;
         background: transparent;
 
         &::placeholder {
           font-family: Open Sans;
           font-size: 14px;
           opacity: 0.5;
-          color: #0F1A2E;
+          color: #0f1a2e;
           background: transparent;
-
         }
       }
     }
@@ -150,7 +144,6 @@ a {
       opacity: 0.5;
       color: #fff;
       background: transparent;
-
     }
   }
 }
@@ -236,7 +229,6 @@ a {
           animation: blink-caret 0.75s step-end infinite;
 
           @keyframes blink-caret {
-
             from,
             to {
               background-color: transparent;
@@ -267,9 +259,9 @@ a {
         transform: rotate(180deg);
 
         .feature-text {
-          color: #D4DAE6;
+          color: #d4dae6;
           font-family: Playfair Display;
-          opacity: .5;
+          opacity: 0.5;
         }
 
         .feature-design {
@@ -385,6 +377,8 @@ a {
   }
 
   .no-data-found {
+    padding: 15px;
+    background: #d4dae6;
     font-family: Open Sans;
   }
 }
@@ -479,7 +473,7 @@ a {
                 font-size: 16px;
                 font-weight: 400;
                 color: #fff;
-                opacity: .5;
+                opacity: 0.5;
               }
             }
           }

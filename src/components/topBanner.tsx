@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import { TypeAnimation } from "react-type-animation";
@@ -100,7 +101,9 @@ const TopBanner: React.FC<Props> = (props) => {
         </div>
         <div className='slider-content-wrapper d-flex align-items-end justify-content--center'>
           <div className='feature-blog-wrapper d-flex align-items-center'>
-            <p className='feature-text font-size-22 font-weight--400'>Featured Blogs</p>
+            <p className='feature-text font-size-22 font-weight--400'>
+              Featured Blogs
+            </p>
             <div className='feature-design'></div>
           </div>
           <Slider {...settingsThumbs} asNavFor={nav1} ref={slider2}>
@@ -108,17 +111,21 @@ const TopBanner: React.FC<Props> = (props) => {
               props.featuredArticlesList.length > 0 &&
               props.featuredArticlesList.map((item: any, index: number) => {
                 return (
-                  <div
-                    key={index}
-                    className='blog-slider-description d-flex justify-content--flex-start align-items-end'
-                  >
-                    <p className='slider-description-text font-size-25'>
-                      {item.attributes.title}
-                    </p>
-                    <p className='double-quotes d-flex justify-content--center align-items-end'>
-                      ”
-                    </p>
-                  </div>
+                  <>
+                    <Link href={`article/${item.id}`}>
+                      <div
+                        key={index}
+                        className='blog-slider-description d-flex justify-content--flex-start align-items-end'
+                      >
+                        <p className='slider-description-text font-size-25'>
+                          {item.attributes.title}
+                        </p>
+                        <p className='double-quotes d-flex justify-content--center align-items-end'>
+                          ”
+                        </p>
+                      </div>
+                    </Link>
+                  </>
                 );
               })}
           </Slider>
