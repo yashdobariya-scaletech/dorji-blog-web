@@ -14,6 +14,7 @@ interface Props {
  * @param handleTabChange - function to handle tab change
  */
 const Tabs: React.FC<Props> = (props) => {
+    console.log(props);
     return (
         <div className="custom-tabs d-flex font-size-18 font-weight--600 ">
             {props.tabs.map((tab, index: number) => {

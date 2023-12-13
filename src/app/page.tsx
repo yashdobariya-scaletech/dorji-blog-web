@@ -49,6 +49,7 @@ const Home = () => {
     }, []);
 
     const getCategoriesData = () => {
+        console.log(API_CONFIG);
         HttpService.get(API_CONFIG.path.categories)
             .then((response: any) => {
                 const categoriesData = response.data.map(
@@ -134,7 +135,10 @@ const Home = () => {
         <>
             {headerChange ? <DarkHeader /> : <LightHeader />}
             <TopBanner featuredArticlesList={featuredArticlesList} />
-            <div className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130">
+            <div
+                id="blog"
+                className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130"
+            >
                 {categoriesList.length > 0 && (
                     <Tabs
                         tabs={categoriesList}
