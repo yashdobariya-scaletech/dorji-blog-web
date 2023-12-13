@@ -36,7 +36,7 @@ a {
     width: 65%;
     height: 2.5px;
     background-color: #c93e29;
-    
+
   }
 }
 
@@ -96,11 +96,6 @@ a {
             border-bottom: 2px solid transparent;
             opacity: 0.5;
             font-family: Open Sans;
-
-            &:active {
-              opacity: 1;
-              border-bottom: 2px solid #c93e29;
-            }
           }
         }
       }
@@ -229,6 +224,7 @@ a {
           animation: blink-caret 0.75s step-end infinite;
 
           @keyframes blink-caret {
+
             from,
             to {
               background-color: transparent;
