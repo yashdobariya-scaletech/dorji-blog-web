@@ -49,7 +49,6 @@ const Home = () => {
     }, []);
 
     const getCategoriesData = () => {
-        console.log(API_CONFIG);
         HttpService.get(API_CONFIG.path.categories)
             .then((response: any) => {
                 const categoriesData = response.data.map(
