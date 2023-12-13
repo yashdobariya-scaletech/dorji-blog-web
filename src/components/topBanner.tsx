@@ -90,9 +90,6 @@ const TopBanner: React.FC<Props> = (props) => {
                                     2000, // Waits 2s
                                     "Baat",
                                     4000, // Waits 4s
-                                    // () => {
-                                    //     console.log("Sequence completed");
-                                    // },
                                 ]}
                                 wrapper="span"
                                 cursor={false}
