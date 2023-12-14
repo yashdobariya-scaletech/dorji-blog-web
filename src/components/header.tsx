@@ -81,7 +81,6 @@ const LightHeader = () => {
 			</>
 		);
 	};
-	console.log(searchArticlesList, 'searchArticlesList');
 
 	return (
 		<>
