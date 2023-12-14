@@ -33,7 +33,7 @@
   width: 100%;
   margin: 0 auto;
   backdrop-filter: blur(20px);
-  transition-duration: 2s;
+  // transition-duration: .2s;
   will-change: backdrop-filter;
   z-index: 99;
 }
