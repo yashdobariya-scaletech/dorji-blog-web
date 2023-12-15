@@ -1,30 +1,6 @@
 .wrapper {
-	// background-color: $bg-color;
 	overflow-x: hidden;
 }
-
-// .header-container-background {
-// 	position: fixed;
-// 	height: 500px;
-// 	width: 100%;
-// 	left: 0px;
-// 	top: 0px;
-// 	background: linear-gradient(180deg, rgba(235, 60, 91, 0.5) -203.1%, rgba(11, 11, 11, 0.5) 68.41%);
-// 	// z-index: 2;
-// 	margin: 0 auto;
-// 	transition: 1s all ease-in-out;
-// }
-
-// .header-container {
-// 	position: fixed;
-// 	background: transparent;
-// 	backdrop-filter: none;
-// 	padding: 0px;
-// 	width: 100%;
-// 	z-index: 9999;
-// 	transition: 1s all ease-in-out;
-// 	// animation: headerDown 0.4s ease;
-// }
 
 .header-container {
 	position: fixed;
@@ -33,9 +9,11 @@
 	width: 100%;
 	margin: 0 auto;
 	backdrop-filter: blur(20px);
-	transition-duration: 2s;
+	transition-duration: 0.2s;
 	will-change: backdrop-filter;
+	transition: 0.5s ease-in-out;
 	z-index: 99;
+	box-shadow: 0px 0px 10px -4px rgba(15, 26, 46, 0.2);
 }
 
 .home-header {
@@ -74,41 +52,9 @@
 	padding: 90px 20px 0px 20px;
 }
 
-// .footer-wrapper {
-//   background-color: #000000;
-// }
-
-// .bg-color {
-//   background-color: $bg-color;
-// }
-
-.primary-color {
-	// background-color: $primary-color;
-}
-
 .bg-color-light-black {
 	background: #1c1c1c;
 }
-
-// .primary-text--color {
-//   // color: $primary-color;
-// }
-
-// .light-red-color {
-//   color: $light-red-color;
-// }
-
-// .white-color {
-//   color: $white-color;
-// }
-
-// .blue-color {
-//   color: $blue-color;
-// }
-
-// .grey-color {
-//   color: $grey-color;
-// }
 
 .container {
 	max-width: 1400px;
@@ -221,7 +167,6 @@
 	color: rgba(57, 181, 73, 1);
 	background: transparent;
 	border: 1px solid rgba(57, 181, 73, 1);
-	// background-color: $primary-color;
 	cursor: pointer;
 	border-radius: 10px;
 }
@@ -253,7 +198,6 @@
 }
 
 .scroll-btn {
-	// background-image: repeating-linear-gradient(180deg, transparent, transparent 10px, white 10px, white 10px) !important;
 	background: linear-gradient(180deg, #0fdc47 0%, #008d27 100%);
 	color: white;
 	width: 257px;
@@ -322,7 +266,6 @@
 .icon-wrapper {
 	width: 64px;
 	height: 64px;
-	// background: $white-color;
 	border-radius: 11px;
 }
 
@@ -1030,10 +973,6 @@
 	line-height: 72px;
 }
 
-// .white-color {
-//   color: $white-color;
-// }
-
 .font-weight--bold {
 	font-weight: 700;
 }
@@ -1144,12 +1083,6 @@
 	font-style: normal;
 }
 
-// .svg-width {
-//   width: 47px;
-//   height: 94px;
-//   filter: drop-shadow(3px 3px 0 $black-color) drop-shadow(3px 0px 0 $light-red-color);
-// }
-
 .btn-active {
 	background-color: green;
 	color: white;
@@ -1162,7 +1095,6 @@
 	background-color: white !important;
 
 	.tabs-btn {
-		// border: 2px solid transparent;
 		text-transform: uppercase;
 		margin-bottom: 0 !important;
 		cursor: pointer !important;

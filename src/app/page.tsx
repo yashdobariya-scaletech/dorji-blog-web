@@ -1,6 +1,5 @@
 'use client';
 import BlogCard from '@/components/blogCard';
-import { DarkHeader, LightHeader } from '@/components/header';
 import Subscribe from '@/components/subscribe';
 import Tabs from '@/components/tabs';
 import TopBanner from '@/components/topBanner';
@@ -23,7 +22,7 @@ const Home = () => {
 	const [pagination, setPagination] = useState({
 		page: 1,
 		pageCount: 1,
-		pageSize: 2
+		pageSize: 8
 	});
 
 	useEffect(() => {
@@ -136,7 +135,6 @@ const Home = () => {
 
 	return (
 		<>
-			{headerChange ? <DarkHeader /> : <LightHeader />}
 			<TopBanner featuredArticlesList={featuredArticlesList} />
 			<div id="blog" className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130">
 				{categoriesList.length > 0 && !categoriesLoading && (

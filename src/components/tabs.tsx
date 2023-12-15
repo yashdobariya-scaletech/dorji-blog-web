@@ -24,12 +24,11 @@ const Tabs: React.FC<Props> = (props) => {
                     <button
                         disabled={(props.disabled || []).includes(tab)}
                         onClick={onClick}
-                        className={`tabs-btn ${
-                            props.activeTab === tab ||
+                        className={`tabs-btn ${props.activeTab === tab ||
                             tab === props.activeTabName
-                                ? "tabs-btn-active mx-10"
-                                : "mx-10"
-                        }`}
+                            ? "tabs-btn-active mx-10"
+                            : "mx-10"
+                            }`}
                         key={`${tab}${index}`}
                     >
                         {tab}

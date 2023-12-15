@@ -1,5 +1,4 @@
 'use client';
-import { DarkHeader } from '@/components/header';
 import { API_CONFIG, HttpService } from '@/services/http.service';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -28,7 +27,6 @@ const ArticlesDetails = () => {
 
 	return (
 		<>
-			<DarkHeader />
 			{Object.keys(articlesDetails).length !== 0 && !loading && (
 				<div className="d-flex p--20 mt-165 mt-60">
 					<div

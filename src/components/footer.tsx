@@ -31,14 +31,6 @@ const Footer = () => {
                                     </Link>
                                 </li>
                                 <li className="footer-nav-links">
-                                    <Link
-                                        href={"/#blog"}
-                                        className="footer-links cursor-pointer"
-                                    >
-                                        Blogs
-                                    </Link>
-                                </li>
-                                <li className="footer-nav-links">
                                     <a className="footer-links">About Me</a>
                                 </li>
                                 <li className="footer-nav-links">
