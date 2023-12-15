@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import { usePathname } from 'next/navigation';
 
 interface Props {
 	items: any[];
@@ -11,8 +12,34 @@ interface Props {
 
 const SearchArticle: React.FC<Props> = (props) => {
 	const { isScrolled, items, handleOnSearch, handleOnSelect } = props;
-	const styling = isScrolled
-		? {
+	const pathname = usePathname();
+
+	const styling =
+		pathname === '/' || pathname.startsWith(`/article/${Number}`)
+			? isScrolled
+				? {
+					backgroundColor: '0F1A2E',
+					color: '#0F1A2E',
+					height: '38px',
+					hoverBackgroundColor: '#ffffff2e',
+					iconColor: '#0F1A2E',
+					border: 'none',
+					borderRadius: '15px',
+					transition: ".5s ease-in-out",
+					boxShadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)'
+				}
+				: {
+					backgroundColor: '#fff',
+					color: '#FFFFFF',
+					height: '38px',
+					hoverBackgroundColor: '#ffffff2e',
+					iconColor: '#FFFFFF',
+					border: 'none',
+					borderRadius: '15px',
+					transition: ".5s ease-in-out",
+					boxShadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)'
+				}
+			: {
 				backgroundColor: '0F1A2E',
 				color: '#0F1A2E',
 				height: '38px',
@@ -20,18 +47,9 @@ const SearchArticle: React.FC<Props> = (props) => {
 				iconColor: '#0F1A2E',
 				border: 'none',
 				borderRadius: '15px',
+				transition: ".5s ease-in-out",
 				boxShadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)'
-		  }
-		: {
-				backgroundColor: '#fff',
-				color: '#FFFFFF',
-				height: '38px',
-				hoverBackgroundColor: '#ffffff2e',
-				iconColor: '#FFFFFF',
-				border: 'none',
-				borderRadius: '15px',
-				boxShadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)'
-		  };
+			};
 	return (
 		// <div style={{ width: 400 }}>
 		// <ReactSearchAutocomplete
@@ -75,8 +93,8 @@ const SearchArticle: React.FC<Props> = (props) => {
 				}}
 				styling={styling}
 				className=""
-				// onHover={handleOnHover}
-				// onFocus={handleOnFocus}
+			// onHover={handleOnHover}
+			// onFocus={handleOnFocus}
 			/>
 		</div>
 	);

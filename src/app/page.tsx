@@ -127,7 +127,6 @@ const Home = () => {
 	return (
 		<>
 			<LightHeader />
-			{/* {headerChange ? <DarkHeader /> : <LightHeader />} */}
 			<TopBanner featuredArticlesList={featuredArticlesList} />
 			<div id="blog" className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130">
 				{categoriesList.length > 0 && <Tabs tabs={categoriesList} activeTab={activeTab} handleTabChange={handleTabChange} />}
