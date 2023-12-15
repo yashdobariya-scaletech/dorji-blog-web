@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import '../assets/styles/main.scss';
 import './globals.css';
-import LightHeader from '@/components/header';
+import Header from '@/components/header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<LightHeader />
+				<Header />
 				<div>{children}</div>
 				<Footer />
 				<Toaster position="bottom-center" reverseOrder={false} />

@@ -7,7 +7,6 @@ interface Props {
 	isScrolled: boolean;
 	handleOnSearch: (e: any) => void;
 	handleOnSelect: (e: any) => void;
-	// formatResult: (e: any) => void;
 }
 
 const SearchArticle: React.FC<Props> = (props) => {
@@ -51,18 +50,6 @@ const SearchArticle: React.FC<Props> = (props) => {
 				boxShadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)'
 			};
 	return (
-		// <div style={{ width: 400 }}>
-		// <ReactSearchAutocomplete
-		// 	// styling={{ color: 'green', backgroundColor: 'transparent', width: '100%' }}
-		// 	items={items}
-		// 	placeholder="Search"
-		// 	onSearch={handleOnSearch}
-		// 	onSelect={handleOnSelect}
-		// 	// formatResult={formatResult}
-		// 	// onHover={handleOnHover}
-		// 	// onFocus={handleOnFocus}
-		// />
-		// // </div>
 		<div style={{ width: 400, height: 38 }}>
 			<ReactSearchAutocomplete
 				items={items}
@@ -93,8 +80,6 @@ const SearchArticle: React.FC<Props> = (props) => {
 				}}
 				styling={styling}
 				className=""
-			// onHover={handleOnHover}
-			// onFocus={handleOnFocus}
 			/>
 		</div>
 	);

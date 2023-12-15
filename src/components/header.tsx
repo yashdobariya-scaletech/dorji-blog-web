@@ -1,11 +1,11 @@
 "use client";
 import { API_CONFIG, HttpService } from "@/services/http.service";
-import { CloseIcon, LightLogo, LightMenuIcon, LightSearchIcon } from "@/assets/icons/icon";
+import { LightLogo, LightMenuIcon } from "@/assets/icons/icon";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import SearchArticle from "./searchArticle";
-import { usePathname, useParams, useRouter } from "next/navigation";
-const LightHeader = () => {
+import { usePathname, useRouter } from "next/navigation";
+const Header = () => {
 	const [searchArticlesList, setSearchArticlesList] = useState<ArticleInfo[]>([]);
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
 	const handleOnSearch = (string: string) => {
@@ -43,7 +43,6 @@ const LightHeader = () => {
 	const router = useRouter()
 
 
-	const isActive = pathname === "/" || pathname.startsWith('blog');
 
 	const headerStyles = {
 		default: {
@@ -71,6 +70,7 @@ const LightHeader = () => {
 			}
 		}
 	};
+
 	// Scroll Detection and State Update
 	useEffect(() => {
 		const handleScroll = () => {
@@ -184,7 +184,6 @@ const LightHeader = () => {
 						<SearchArticle
 							isScrolled={isScrolled}
 							items={searchArticlesList}
-							// formatResult={formatResult}
 							handleOnSelect={(item) => router.push(`/article/${item.id}`)}
 							handleOnSearch={handleOnSearch}
 						/>
@@ -198,4 +197,4 @@ const LightHeader = () => {
 	);
 };
 
-export default LightHeader;
+export default Header;
