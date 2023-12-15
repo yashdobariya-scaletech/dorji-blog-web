@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 const ArticlesDetails = () => {
-	const [articlesDetails, setArticlesDetails] = useState({} as any);
+	const [articlesDetails, setArticlesDetails] = useState({} as ArticleInfo);
 	const [loading, setLoading] = useState(false);
 	const { id } = useParams();
 	useEffect(() => {

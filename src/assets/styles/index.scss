@@ -30,7 +30,7 @@ a {
 
 	&::after {
 		position: absolute;
-		content: "";
+		content: '';
 		left: 0;
 		bottom: 0;
 		width: 65%;
@@ -45,7 +45,7 @@ a {
 
 	&::after {
 		position: absolute;
-		content: "";
+		content: '';
 		left: 0;
 		bottom: 0;
 		width: 65%;
@@ -258,7 +258,7 @@ a {
 				position: relative;
 
 				&::after {
-					content: "";
+					content: '';
 					position: absolute;
 					transform: translate(100%, -50%);
 					top: 50%;
@@ -365,12 +365,9 @@ a {
 
 		.blog-content-wrapper {
 			width: 100%;
-			// max-width: 25%;
-			// min-width: 25%;
 			height: 400px;
 
 			.content-description-wrapper {
-				// max-width: 25%;
 				width: 100%;
 				background: rgba(0, 0, 0, 0.5);
 
