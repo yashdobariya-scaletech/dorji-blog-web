@@ -39,6 +39,10 @@ a {
 	}
 }
 
+.active-side-header-nav-links {
+	color: #c93e29;
+}
+
 .active-dark-header-nav-links {
 	color: #0f1a2e !important;
 	opacity: 1 !important;
@@ -68,6 +72,7 @@ a {
 			color: #fff;
 
 			.nav-links {
+				cursor: auto;
 				opacity: 0.5;
 				font-weight: 400;
 				position: relative;
@@ -81,6 +86,7 @@ a {
 	width: 100%;
 	position: relative !important;
 	height: 100% !important;
+
 	.wrapper {
 		position: absolute !important;
 		display: flex !important;
@@ -96,6 +102,7 @@ a {
 		.sc-fqkvVR {
 			display: flex;
 			height: 100%;
+			align-items: center;
 			min-height: 100% !important;
 			padding: 0px 20px;
 			flex-direction: row-reverse;
@@ -105,7 +112,9 @@ a {
 			}
 
 			input {
+				background-color: transparent !important;
 				padding: 0;
+				width: 100% !important;
 			}
 		}
 
@@ -114,6 +123,7 @@ a {
 			background-color: #fff;
 			color: #0f1a2e;
 			border-radius: 15px;
+			border: 0.4px solid rgba(15, 26, 46, 0.1);
 			box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
 
 			.line {
@@ -187,18 +197,48 @@ a {
 		}
 	}
 }
+.sidenav-icon-wrapper {
+	width: 50px;
+	height: 50px;
+	border-radius: 15px;
+}
+
+.animate-sidenav {
+	animation: slide-in-out 0.5s ease-out;
+}
+
+@keyframes slide-in-out {
+	0% {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}
 
 .sidenav-mobile-wrapper {
 	width: 100%;
 	height: 100vh;
+	// background: #00000070;
+	z-index: 999;
 	backdrop-filter: blur(2px);
 
 	.sidenav {
 		min-width: 300px;
 		width: 60%;
+		background: rgba(0, 0, 0, 0.624);
 		height: 100vh;
 		backdrop-filter: blur(10px);
 		will-change: backdrop-filter;
+
+		.close-icon-wrapper {
+			width: 50px;
+			height: 50px;
+			border-radius: 15px;
+		}
 	}
 
 	ul {
@@ -207,6 +247,10 @@ a {
 			font-size: 18px;
 			font-weight: 800;
 			padding: 20px;
+
+			a {
+				cursor: auto;
+			}
 		}
 	}
 }
@@ -246,12 +290,12 @@ a {
 
 	.welcome-title-slide-wrapper {
 		.welcome-section-wrapper {
-			.welcome-text {
+			.welcome-mini-title {
 				font-family: Playfair Display;
 				color: #fff;
 			}
 
-			.mannkibata-text {
+			.main-title {
 				color: #fff;
 				font-family: Playfair Display;
 				letter-spacing: 1.2px;
@@ -303,7 +347,7 @@ a {
 					opacity: 0.5;
 				}
 
-				.feature-design {
+				.feature-line {
 					width: 2px;
 					height: 100px;
 					writing-mode: vertical-lr;
@@ -311,13 +355,13 @@ a {
 				}
 			}
 
-			.blog-slider-description {
+			.slider-description-wrapper {
 				gap: 10px;
 				width: 496px;
 				align-items: flex-start;
 				display: flex !important;
 
-				.slider-description-text {
+				.slider-description {
 					font-family: Open Sans;
 
 					span {
@@ -468,53 +512,54 @@ a {
 	height: 260px;
 	background: #0f1a2e;
 
-	.footer-container {
-		max-width: 1460px;
-		margin: 0 auto;
-		width: 100%;
-		padding: 0px 20px;
+	.container {
+		// max-width: 1460px;
+		// margin: 0 auto;
+		// width: 100%;
+		// padding: 0px 20px;
 
 		.footer-wrapper {
-			.footer-logo-nav-links-wrapper {
-				gap: 200px;
+			.footer-logo-wrapper {
+				gap: 20px;
 
-				.footer-logo-wrapper {
+				.mannkibaat-by-wrapper {
 					gap: 20px;
 
-					.mannkibaat-by-wrapper {
-						gap: 20px;
+					.mannkibaat-by-text {
+						font-family: Open Sans;
+						color: #fff;
+						opacity: 0.5;
+						line-height: 11px;
+					}
 
-						.mannkibaat-by-text {
-							font-family: Open Sans;
-							color: #fff;
-							opacity: 0.5;
-							line-height: 11px;
-						}
-
-						.mannkibaat-by-name-text {
-							font-family: Playfair Display;
-							color: #fff;
-							line-height: 21px;
-						}
+					.mannkibaat-by-name-text {
+						font-family: Playfair Display;
+						color: #fff;
+						line-height: 21px;
 					}
 				}
+			}
 
-				.nav-links-wrapper {
-					.footer-nav-list {
-						gap: 30px;
+			.nav-links-wrapper {
+				.footer-nav-list {
+					gap: 30px;
 
-						.footer-nav-links {
-							.footer-links {
-								font-family: Open Sans;
-								font-size: 16px;
-								font-weight: 400;
-								color: #fff;
-								opacity: 0.5;
-							}
+					.footer-nav-links {
+						.footer-links {
+							font-family: Open Sans;
+							font-size: 16px;
+							font-weight: 400;
+							color: #fff;
+							opacity: 0.5;
 						}
 					}
 				}
 			}
+
+			// .footer-logo-nav-links-wrapper {
+			// 	gap: 200px;
+
+			// }
 
 			.footer-social-text-wrapper {
 				gap: 20px;

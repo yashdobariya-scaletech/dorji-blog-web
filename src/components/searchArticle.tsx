@@ -17,8 +17,9 @@ const SearchArticle: React.FC<Props> = (props) => {
 		pathname === '/' || pathname.startsWith(`/article/${Number}`)
 			? isScrolled
 				? {
-					backgroundColor: '0F1A2E',
+					backgroundColor: '#0F1A2E',
 					color: '#0F1A2E',
+					placeholderColor: "#0F1A2E",
 					height: '38px',
 					hoverBackgroundColor: '#ffffff2e',
 					iconColor: '#0F1A2E',
@@ -39,7 +40,7 @@ const SearchArticle: React.FC<Props> = (props) => {
 					boxShadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)'
 				}
 			: {
-				backgroundColor: '0F1A2E',
+				backgroundColor: '#0F1A2E',
 				color: '#0F1A2E',
 				height: '38px',
 				hoverBackgroundColor: '#ffffff2e',
@@ -50,38 +51,36 @@ const SearchArticle: React.FC<Props> = (props) => {
 				boxShadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)'
 			};
 	return (
-		<div style={{ width: 400, height: 38 }}>
-			<ReactSearchAutocomplete
-				items={items}
-				placeholder="Search"
-				onSearch={handleOnSearch}
-				onSelect={handleOnSelect}
-				formatResult={(item: any) => {
-					return (
-						<>
-							<div key={item.id} className="d-flex cursor-pointer">
-								<div className="w-[50] h-[50]">
-									<Image
-										width={50}
-										height={50}
-										src={item.img}
-										style={{
-											width: '50px',
-											height: '50px',
-											objectFit: 'cover'
-										}}
-										alt="Culture"
-									/>
-								</div>
-								<p className="ml-20"> {item.name}</p>
+		<ReactSearchAutocomplete
+			items={items}
+			placeholder="Search"
+			onSearch={handleOnSearch}
+			onSelect={handleOnSelect}
+			formatResult={(item: any) => {
+				return (
+					<>
+						<div key={item.id} className="d-flex cursor-pointer">
+							<div className="w-[50] h-[50]">
+								<Image
+									width={50}
+									height={50}
+									src={item.img}
+									style={{
+										width: '50px',
+										height: '50px',
+										objectFit: 'cover'
+									}}
+									alt="Culture"
+								/>
 							</div>
-						</>
-					);
-				}}
-				styling={styling}
-				className=""
-			/>
-		</div>
+							<p className="ml-20"> {item.name}</p>
+						</div>
+					</>
+				);
+			}}
+			styling={styling}
+			className=""
+		/>
 	);
 };
 

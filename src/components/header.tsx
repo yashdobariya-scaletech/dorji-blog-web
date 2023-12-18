@@ -1,6 +1,6 @@
 "use client";
 import { API_CONFIG, HttpService } from "@/services/http.service";
-import { LightLogo, LightMenuIcon } from "@/assets/icons/icon";
+import { CloseIcon, DarkMenuIcon, LightLogo, LightMenuIcon } from "@/assets/icons/icon";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import SearchArticle from "./searchArticle";
@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 const Header = () => {
 	const [searchArticlesList, setSearchArticlesList] = useState<ArticleInfo[]>([]);
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
+	const [sideNav, setSideNav] = useState<boolean>(false)
 	const handleOnSearch = (string: string) => {
 		if (string) {
 			HttpService.get(`${API_CONFIG.path.articles}?populate=*&filters[title][$containsi]=${string.trim()}`)
@@ -54,7 +55,9 @@ const Header = () => {
 			searchbox: {
 				transition: ".2s ease-in-out",
 				backgroundColor: "rgba(255, 255, 255, 0.1)",
-				color: "red"
+			},
+			sideNavMenu: {
+				backgroundColor: "rgba(255, 255, 255, 0.10)"
 			}
 		},
 		scrolled: {
@@ -66,7 +69,10 @@ const Header = () => {
 			searchbox: {
 				transition: ".2s ease-in-out",
 				backgroundColor: "rgba(15, 26, 46, 0.1)",
-				color: "green"
+			}
+			,
+			sideNavMenu: {
+				backgroundColor: "rgba(15, 26, 46, 0.1)"
 			}
 		}
 	};
@@ -137,7 +143,7 @@ const Header = () => {
 												: headerStyles.default
 											: headerStyles.scrolled
 									}
-									className={`nav-links pt-10 pb-10 ${pathname === '/' ? 'active-light-header-nav-links' : ""}`}
+									className={`nav-links cursor-pointer pt-10 pb-10 ${pathname === '/' ? 'active-light-header-nav-links' : ""}`}
 								>
 									Home
 								</Link>
@@ -188,11 +194,32 @@ const Header = () => {
 							handleOnSearch={handleOnSearch}
 						/>
 					</div>
-					<div className="sidenav-icon-wrapper display-none cursor-pointer">
-						<LightMenuIcon />
+					<div
+						onClick={() => setSideNav(true)}
+						className="sidenav-icon-wrapper display-none cursor-pointer"
+						style={pathname === "/" || pathname.startsWith(`/article/${Number}`) ? isScrolled ? headerStyles.scrolled.sideNavMenu : headerStyles.default.sideNavMenu : headerStyles.scrolled.sideNavMenu}>
+						{
+							pathname === "/" || pathname.startsWith(`/article/${Number}`) ? isScrolled ? <DarkMenuIcon /> : <LightMenuIcon /> : <DarkMenuIcon />
+						}
 					</div>
 				</div>
 			</header>
+			{sideNav && (<div className=" sidenav-mobile-wrapper animate-sidenav d-flex justify-content-end position--fixed top--0 right--0">
+				<div className="sidenav">
+					<div className="close-icon-wrapper position--absolute top--20 right--20"
+						onClick={() => setSideNav(false)}>
+						<CloseIcon />
+					</div>
+					<ul className="mt-50">
+						<li className="sidenav-links">
+							<Link className={`cursor-pointer ${pathname === "/" ? "active-side-header-nav-links" : ""}
+							}`} href={"/"}>Home</Link>
+						</li>
+						<li className="sidenav-links"><Link href={`article/${Number}`}>About Me</Link></li>
+						<li className="sidenav-links"><Link href={""}>Contact Me</Link></li>
+					</ul>
+				</div>
+			</div>)}
 		</>
 	);
 };

@@ -270,7 +270,7 @@
 }
 
 .cursor-pointer {
-	cursor: pointer;
+	cursor: pointer !important;
 }
 
 .border-radius-6 {
@@ -649,6 +649,10 @@
 	margin-top: 80px;
 }
 
+.mt-84 {
+	margin-top: 84px;
+}
+
 .mt--190 {
 	margin-top: -190px;
 }
@@ -671,6 +675,10 @@
 
 .mt-112 {
 	margin-top: 112px;
+}
+
+.mt-120 {
+	margin-top: 120px;
 }
 
 .mt-140 {

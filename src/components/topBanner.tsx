@@ -67,9 +67,9 @@ const TopBanner: React.FC<Props> = (props) => {
 					})}
 			</Slider>
 			<div className="welcome-title-slide-wrapper position--absolute top--0 left--0 full-width full-height d-flex justify-content-space-between align-items-start flex-direction--column">
-				<div className="welcome-section-wrapper full-width d-flex align-items-center full-height flex-direction--column pt-120">
-					<p className="welcome-text font-size-24 font-weight--400 text-align--center">Welcome to</p>
-					<p className="mannkibata-text font-size-60 font-weight--700 d-flex">
+				<div className="welcome-section-wrapper mt-84 full-width d-flex align-items-center full-height flex-direction--column pt-120">
+					<p className="welcome-mini-title font-size-24 font-weight--400 text-align--center">Welcome to</p>
+					<p className="main-title font-size-60 font-weight--700 d-flex">
 						Mannki
 						<span>
 							<TypeAnimation
@@ -93,7 +93,7 @@ const TopBanner: React.FC<Props> = (props) => {
 				<div className="slider-content-wrapper d-flex align-items-end justify-content--center">
 					<div className="feature-blog-wrapper d-flex align-items-center">
 						<p className="feature-text font-size-22 font-weight--400">Featured Blogs</p>
-						<div className="feature-design"></div>
+						<div className="feature-line"></div>
 					</div>
 					<Slider {...settingsThumbs} asNavFor={nav1} ref={slider2}>
 						{props.featuredArticlesList &&
@@ -102,8 +102,8 @@ const TopBanner: React.FC<Props> = (props) => {
 								return (
 									<>
 										<Link key={index} href={`article/${item.id}`}>
-											<div className="blog-slider-description d-flex justify-content--flex-start align-items-end">
-												<p className="slider-description-text font-size-25">{item.attributes.title}</p>
+											<div className="slider-description-wrapper d-flex justify-content--flex-start align-items-end">
+												<p className="slider-description font-size-25">{item.attributes.title}</p>
 												<p className="double-quotes d-flex justify-content--center align-items-end">”</p>
 											</div>
 										</Link>
