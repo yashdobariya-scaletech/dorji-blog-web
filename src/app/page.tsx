@@ -136,7 +136,7 @@ const Home = () => {
 	return (
 		<>
 			<TopBanner featuredArticlesList={featuredArticlesList} />
-			<div id="blog" className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130">
+			<div className="blog-tabs-content-section container d-flex flex-direction--column pb-100 pt-130">
 				{categoriesList.length > 0 && !categoriesLoading && (
 					<Tabs tabs={categoriesList} activeTab={activeTab} handleTabChange={handleTabChange} />
 				)}
