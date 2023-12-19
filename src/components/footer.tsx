@@ -33,7 +33,7 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li className="footer-nav-links">
-                                <Link href={'/about-me'} className={`footer-links ${pathname === '/about-me' ? "active-footer-nav-links" : ''}`}>About Me</Link>
+                                <Link href={'/about-me'} className={`footer-links cursor-pointer ${pathname === '/about-me' ? "active-footer-nav-links" : ''}`}>About Me</Link>
                             </li>
                             <li className="footer-nav-links">
                                 <a className="footer-links">Contact Me</a>
