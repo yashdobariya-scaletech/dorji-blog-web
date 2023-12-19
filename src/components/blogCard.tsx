@@ -16,7 +16,7 @@ const BlogCard: React.FC<Props> = (props) => {
 					<>
 						{props.articlesList?.map((item: any, index: number) => (
 							<div key={index} className="blog-content-wrapper position--relative">
-								<Link href={`article/${item.id}`}>
+								<Link href={`/article/${item.id}`}>
 									<Image
 										width={500}
 										height={500}

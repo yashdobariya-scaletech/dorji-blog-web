@@ -17,13 +17,26 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-	background: #f1f1f1;
+	background: RGB(201, 62, 41);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #b3bcca;
+	background: #d4dae6;
 }
-
+.about-wrapper {
+	.about-main-title {
+		font-family: Playfair Display;
+	}
+	.about-description {
+		margin-bottom: 20px;
+	}
+	.personal-img-wrapper {
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		margin: 40px 0px;
+	}
+}
 .active-light-header-nav-links {
 	color: #fff;
 	opacity: 1 !important;
@@ -35,7 +48,16 @@ a {
 		bottom: 0;
 		width: 65%;
 		height: 2.5px;
+		animation: active-animation 0.4s ease-in-out;
 		background-color: #c93e29;
+	}
+	@keyframes active-animation {
+		0% {
+			width: 0%;
+		}
+		100% {
+			width: 65%;
+		}
 	}
 }
 
@@ -132,6 +154,10 @@ a {
 
 			ul {
 				border-radius: 15px;
+				height: 300px;
+				margin: 0px 10px 0px 0px;
+				overflow-y: scroll;
+				scroll-padding: 10px;
 
 				li {
 					border-radius: 15px;
@@ -204,25 +230,43 @@ a {
 }
 
 .animate-sidenav {
-	animation: slide-in-out 0.5s ease-out;
+	animation: slide-in-out 0.5s ease-in-out;
+	transition: 0.5s ease-in;
 }
 
 @keyframes slide-in-out {
 	0% {
 		opacity: 0;
+		transition: 0.5s ease-in;
 		transform: translateX(100%);
 	}
 
 	100% {
+		transition: 0.5s ease-in;
 		opacity: 1;
 		transform: translateX(0%);
+	}
+}
+
+.animate-opacity {
+	animation: silde-opacty 0.5s ease-in-out;
+}
+@keyframes silde-opacty {
+	0% {
+		opacity: 0;
+		transition: 0.5s ease-in;
+	}
+
+	100% {
+		transition: 0.5s ease-in;
+		opacity: 1;
 	}
 }
 
 .sidenav-mobile-wrapper {
 	width: 100%;
 	height: 100vh;
-	// background: #00000070;
+	background: #00000070;
 	z-index: 999;
 	backdrop-filter: blur(2px);
 
@@ -513,11 +557,6 @@ a {
 	background: #0f1a2e;
 
 	.container {
-		// max-width: 1460px;
-		// margin: 0 auto;
-		// width: 100%;
-		// padding: 0px 20px;
-
 		.footer-wrapper {
 			.footer-logo-wrapper {
 				gap: 20px;
@@ -555,11 +594,6 @@ a {
 					}
 				}
 			}
-
-			// .footer-logo-nav-links-wrapper {
-			// 	gap: 200px;
-
-			// }
 
 			.footer-social-text-wrapper {
 				gap: 20px;

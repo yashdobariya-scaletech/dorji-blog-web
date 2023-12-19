@@ -13,7 +13,7 @@
 	will-change: backdrop-filter;
 	transition: 0.5s ease-in-out;
 	z-index: 99;
-	box-shadow: 0px 0px 10px -4px rgba(15, 26, 46, 0.2);
+	box-shadow: 0px 0px 10px 0px rgba(15, 26, 46, 0.2);
 }
 
 .home-header {
@@ -735,6 +735,10 @@
 
 .mb-38 {
 	margin-bottom: 38px;
+}
+
+.mb-40 {
+	margin-bottom: 40px;
 }
 
 .mb-45 {

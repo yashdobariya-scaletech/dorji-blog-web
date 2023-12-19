@@ -41,7 +41,7 @@ const Header = () => {
 		}
 	};
 	const pathname = usePathname();
-	const router = useRouter()
+	const router = useRouter();
 
 
 
@@ -86,7 +86,6 @@ const Header = () => {
 		return;
 	}, []);
 
-	// Conditional Rendering with Styles
 	return (
 		<>
 			<header
@@ -148,7 +147,7 @@ const Header = () => {
 									Home
 								</Link>
 								<Link
-									href=""
+									href="/about-me"
 									style={
 										pathname === "/" || pathname.startsWith(`/article/${Number}`)
 											? isScrolled
@@ -156,7 +155,7 @@ const Header = () => {
 												: headerStyles.default
 											: headerStyles.scrolled
 									}
-									className={`nav-links pt-10 pb-10`}
+									className={`nav-links pt-10 pb-10 cursor-pointer ${pathname === '/about-me' ? 'active-light-header-nav-links' : ""}`}
 								>
 									About Me
 								</Link>
@@ -204,8 +203,8 @@ const Header = () => {
 					</div>
 				</div>
 			</header>
-			{sideNav && (<div className=" sidenav-mobile-wrapper animate-sidenav d-flex justify-content-end position--fixed top--0 right--0">
-				<div className="sidenav">
+			{sideNav && (<div className=" sidenav-mobile-wrapper animate-opacity d-flex justify-content-end position--fixed top--0 right--0">
+				<div className="sidenav animate-sidenav" >
 					<div className="close-icon-wrapper position--absolute top--20 right--20"
 						onClick={() => setSideNav(false)}>
 						<CloseIcon />
@@ -213,10 +212,11 @@ const Header = () => {
 					<ul className="mt-50">
 						<li className="sidenav-links">
 							<Link className={`cursor-pointer ${pathname === "/" ? "active-side-header-nav-links" : ""}
-							}`} href={"/"}>Home</Link>
+							}`} href={"/"} onClick={() => setSideNav(false)}>Home</Link>
 						</li>
-						<li className="sidenav-links"><Link href={`article/${Number}`}>About Me</Link></li>
-						<li className="sidenav-links"><Link href={""}>Contact Me</Link></li>
+						<li className="sidenav-links"><Link href={`/about-me`} className={`cursor-pointer ${pathname === "/about-me" ? "active-side-header-nav-links" : ""}
+							}`} onClick={() => setSideNav(false)}>About Me</Link></li>
+						<li className="sidenav-links"><Link href={""} onClick={() => setSideNav(false)}>Contact Me</Link></li>
 					</ul>
 				</div>
 			</div>)}
