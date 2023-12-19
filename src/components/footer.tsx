@@ -1,7 +1,10 @@
+'use client'
 import { FacebookIcon, FooterLogo, TwitterIcon } from "@/assets/icons/icon";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+    const pathname = usePathname();
     return (
         <footer className="footer-section">
             <div className="container full-height d-flex justify-content-center align-items-center">
@@ -24,13 +27,13 @@ const Footer = () => {
                             <li className="footer-nav-links">
                                 <Link
                                     href={"/"}
-                                    className="footer-links cursor-pointer active-footer-nav-links"
+                                    className={`footer-links cursor-pointer  ${pathname === '/' ? "active-footer-nav-links" : ''}`}
                                 >
                                     Home
                                 </Link>
                             </li>
                             <li className="footer-nav-links">
-                                <a className="footer-links">About Me</a>
+                                <Link href={'/about-me'} className={`footer-links cursor-pointer ${pathname === '/about-me' ? "active-footer-nav-links" : ''}`}>About Me</Link>
                             </li>
                             <li className="footer-nav-links">
                                 <a className="footer-links">Contact Me</a>

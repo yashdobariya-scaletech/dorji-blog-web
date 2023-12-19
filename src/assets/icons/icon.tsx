@@ -178,7 +178,7 @@ export const CloseIcon: React.FC<Props> = (props) => (
         width="30"
         height="43"
         viewBox="0 0 12 12"
-        fill="#fff"
+        fill="#C93E29"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
     >
