@@ -20,7 +20,7 @@ const BlogCard: React.FC<Props> = (props) => {
 									<Image
 										width={500}
 										height={500}
-										src={`http://192.168.1.97:1337${item.attributes.previewImage.data.attributes.url}`}
+										src={`${process.env.NEXT_PUBLIC_API_KEY}${item.attributes.previewImage.data.attributes.url}`}
 										style={{
 											width: '100%',
 											height: '100%',

@@ -50,7 +50,7 @@ const TopBanner: React.FC<Props> = (props) => {
 								<div
 									style={{
 										color: 'white',
-										backgroundImage: `url(http://192.168.1.97:1337${item.attributes.previewImage.data.attributes.url})` || '',
+										backgroundImage: `url(${process.env.NEXT_PUBLIC_API_KEY}${item.attributes.previewImage.data.attributes.url})` || '',
 										backgroundPosition: 'center center',
 										backgroundSize: 'cover'
 									}}

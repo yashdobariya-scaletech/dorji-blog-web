@@ -3,7 +3,7 @@ import queryString from 'query-string';
 const axiosInstance = axios.create();
 
 export const API_CONFIG = {
-	baseUrl: 'http://192.168.1.97:1337',
+	baseUrl: process.env.NEXT_PUBLIC_API_KEY,
 	path: {
 		categories: 'categories',
 		articles: 'articles',

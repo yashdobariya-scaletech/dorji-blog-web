@@ -30,7 +30,7 @@ const Header = () => {
 							}: ArticleInfo) => ({
 								id,
 								name: title,
-								img: `http://192.168.1.97:1337${url}`
+								img: `${process.env.NEXT_PUBLIC_API_KEY}${url}`
 							})
 						);
 					setSearchArticlesList(articlesList);
