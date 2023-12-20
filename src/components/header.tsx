@@ -43,8 +43,6 @@ const Header = () => {
 	const pathname = usePathname();
 	const router = useRouter();
 
-
-
 	const headerStyles = {
 		default: {
 			header: {
