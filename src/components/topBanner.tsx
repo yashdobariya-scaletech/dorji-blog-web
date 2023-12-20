@@ -24,7 +24,7 @@ const TopBanner: React.FC<Props> = (props) => {
 		slidesToScroll: 1,
 		arrows: false,
 		fade: true,
-		speed: 1500,
+		speed: 1900,
 		asNavFor: '.slider-nav'
 	};
 
@@ -32,10 +32,10 @@ const TopBanner: React.FC<Props> = (props) => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		asNavFor: '.slider-for',
-		dots: false,
+		dots: true,
 		arrows: false,
 		autoplay: true,
-		speed: 1500,
+		speed: 1900,
 		autoplaySpeed: 5000
 	};
 
@@ -75,12 +75,16 @@ const TopBanner: React.FC<Props> = (props) => {
 							<TypeAnimation
 								sequence={[
 									'बात',
-									2000, // Waits 2s
+									4000, // Waits 4s
 									'Baat',
 									4000 // Waits 4s
 								]}
+								// deletionSpeed={90}
+								// speed={20}
 								wrapper="span"
 								cursor={false}
+								omitDeletionAnimation={true}
+								preRenderFirstString={true}
 								repeat={Infinity}
 								style={{
 									background: '#C93E29',
@@ -95,7 +99,7 @@ const TopBanner: React.FC<Props> = (props) => {
 						<p className="feature-text font-size-22 font-weight--400">Featured Blogs</p>
 						<div className="feature-line"></div>
 					</div>
-					<Slider {...settingsThumbs} asNavFor={nav1} ref={slider2}>
+					<Slider {...settingsThumbs} asNavFor={nav1} ref={slider2 !== null ? slider1 : undefined}>
 						{props.featuredArticlesList &&
 							props.featuredArticlesList.length > 0 &&
 							props.featuredArticlesList.map((item: any, index: number) => {
