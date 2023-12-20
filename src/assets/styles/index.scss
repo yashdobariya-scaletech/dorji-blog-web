@@ -250,20 +250,20 @@ a {
 	}
 }
 
-// .animate-opacity {
-// 	animation: silde-opacty 0.3s ease-in-out;
-// }
-// @keyframes silde-opacty {
-// 	0% {
-// 		opacity: 0;
-// 		transition: 0.3s ease-in;
-// 	}
+.animate-opacity {
+	animation: silde-opacty 0.3s ease-in-out;
+}
+@keyframes silde-opacty {
+	0% {
+		opacity: 0;
+		transition: 0.3s ease-in;
+	}
 
-// 	100% {
-// 		transition: 0.5s ease-in;
-// 		opacity: 1;
-// 	}
-// }
+	100% {
+		transition: 0.5s ease-in;
+		opacity: 1;
+	}
+}
 
 .sidenav-mobile-wrapper {
 	width: 100%;
