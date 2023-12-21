@@ -17,7 +17,7 @@ export const featuredBlogData = [
 			previewImage: {
 				data: {
 					attributes: {
-						testurl: `${process.env.NEXT_PUBLIC_API_KEY}/uploads/89925310_101517338155992_4043084772807802880_n_b2b9233e60.webp`
+						url: `/uploads/cropped_yyyyy_9bed6258c8.jpg`
 					}
 				}
 			}
