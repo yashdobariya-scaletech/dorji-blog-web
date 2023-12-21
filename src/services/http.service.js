@@ -61,8 +61,8 @@ const deleteRequest = (url, params = {}) => {
  */
 const commonAxios = ({ method, url, data, contentType = 'application/json' }) => {
 	const headers = {
-		'Content-Type': contentType,
-		Authorization: `Bearer f921ef43f02cbf9e44863b2c09bd5a6e6c5e2b36a359df06d1f75909d47b45641876936fe162a0890b5555582550be0c40694d4b97b04cd22ce0f72f0ae042f5ffacdfc5cec9bbf978b18b92c74678007de6780b95068a4ac2469bae1fc95415864b37db49ea2a2f4fcfbf9dcc4925162d886161ecb048e5954da40b8af048a3`
+		'Content-Type': contentType
+		// Authorization: `Bearer f921ef43f02cbf9e44863b2c09bd5a6e6c5e2b36a359df06d1f75909d47b45641876936fe162a0890b5555582550be0c40694d4b97b04cd22ce0f72f0ae042f5ffacdfc5cec9bbf978b18b92c74678007de6780b95068a4ac2469bae1fc95415864b37db49ea2a2f4fcfbf9dcc4925162d886161ecb048e5954da40b8af048a3`
 	};
 
 	return new Promise((resolve, reject) => {
