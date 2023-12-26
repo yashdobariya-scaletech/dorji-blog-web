@@ -41,7 +41,7 @@ const TopBanner: React.FC<Props> = (props) => {
 
 	return (
 		<div className="top-banner-section position--relative ">
-			<Slider {...settingsMain} asNavFor={nav2} ref={slider1 !== null ? slider1 : undefined}>
+			<Slider {...settingsMain} asNavFor={nav2} ref={slider1}>
 				{props.featuredArticlesList &&
 					props.featuredArticlesList.length > 0 &&
 					props.featuredArticlesList?.map((item: any, index: number) => {
@@ -50,7 +50,8 @@ const TopBanner: React.FC<Props> = (props) => {
 								<div
 									style={{
 										color: 'white',
-										backgroundImage: `url(${process.env.NEXT_PUBLIC_API_KEY}${item.attributes.previewImage.data.attributes.url})` || '',
+										backgroundImage:
+											`url(${process.env.NEXT_PUBLIC_API_KEY}${item.attributes.previewImage.data.attributes.url})` || '',
 										backgroundPosition: 'center center',
 										backgroundSize: 'cover'
 									}}
@@ -99,7 +100,7 @@ const TopBanner: React.FC<Props> = (props) => {
 						<p className="feature-text font-size-22 font-weight--400">Featured Blogs</p>
 						<div className="feature-line"></div>
 					</div>
-					<Slider {...settingsThumbs} asNavFor={nav1} ref={slider2 !== null ? slider1 : undefined}>
+					<Slider {...settingsThumbs} asNavFor={nav1} ref={slider2}>
 						{props.featuredArticlesList &&
 							props.featuredArticlesList.length > 0 &&
 							props.featuredArticlesList.map((item: any, index: number) => {
