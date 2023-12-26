@@ -8,11 +8,12 @@ const nextConfig = {
 	},
 
 	images: {
+		domains: ['dorgi-admin.9span.in'],
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'dorgi-api.9span.in',
-				port: '1337',
+				hostname: 'dorgi-admin.9span.in',
+				port: '80',
 				pathname: '/**'
 			}
 		]
