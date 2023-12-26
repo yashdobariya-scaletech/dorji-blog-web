@@ -10,8 +10,8 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
-				protocol: 'http',
-				hostname: '43.205.193.199',
+				protocol: 'https',
+				hostname: 'dorgi-api.9span.in',
 				port: '1337',
 				pathname: '/**'
 			}
