@@ -13,7 +13,7 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'dorgi-admin.9span.in',
-				port: '80',
+				port: '443',
 				pathname: '/**'
 			}
 		]
