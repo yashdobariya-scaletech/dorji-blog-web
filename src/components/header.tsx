@@ -158,7 +158,7 @@ const Header = () => {
 									About Me
 								</Link>
 								<Link
-									href=""
+									href="/contact-me"
 									style={
 										pathname === "/" || pathname.startsWith(`/article/${Number}`)
 											? isScrolled
@@ -166,7 +166,7 @@ const Header = () => {
 												: headerStyles.default
 											: headerStyles.scrolled
 									}
-									className={`nav-links pt-10 pb-10`}
+									className={`nav-links pt-10 pb-10 cursor-pointer ${pathname === '/contact-me' ? 'active-light-header-nav-links' : ""}`}
 								>
 									Contact Me
 								</Link>
@@ -212,9 +212,14 @@ const Header = () => {
 							<Link className={`cursor-pointer ${pathname === "/" ? "active-side-header-nav-links" : ""}
 							}`} href={"/"} onClick={() => setSideNav(false)}>Home</Link>
 						</li>
-						<li className="sidenav-links"><Link href={`/about-me`} className={`cursor-pointer ${pathname === "/about-me" ? "active-side-header-nav-links" : ""}
-							}`} onClick={() => setSideNav(false)}>About Me</Link></li>
-						<li className="sidenav-links"><Link href={""} onClick={() => setSideNav(false)}>Contact Me</Link></li>
+						<li className="sidenav-links">
+							<Link href={`/about-me`} className={`cursor-pointer ${pathname === "/about-me" ? "active-side-header-nav-links" : ""}
+							}`} onClick={() => setSideNav(false)}>About Me</Link>
+						</li>
+						<li className="sidenav-links">
+							<Link href={"/contact-me"} className={`cursor-pointer ${pathname === "/contact-me" ? "active-side-header-nav-links" : ""}
+							}`} onClick={() => setSideNav(false)}>Contact Me</Link>
+						</li>
 					</ul>
 				</div>
 			</div>)}

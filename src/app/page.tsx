@@ -30,10 +30,6 @@ const Home = () => {
 		getFeaturedArticlesInfo();
 	}, []);
 
-	useEffect(() => {
-		getCategoriesData();
-		getArticlesInfo();
-	}, []);
 
 	useEffect(() => {
 		getArticlesInfo();

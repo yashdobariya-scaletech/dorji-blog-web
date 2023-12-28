@@ -636,3 +636,37 @@ a {
 		}
 	}
 }
+.contact-wrapper {
+	.contact-title {
+		font-family: 'Playfair Display';
+	}
+	.contact-form {
+		.input-name-wrapper,
+		.input-email-wrapper,
+		.input-website-wrapper,
+		.comment-wrapper {
+			height: 60px;
+			width: 100%;
+			max-width: 328px;
+			margin: 20px 0px;
+			.input-name {
+				color: red;
+				&:focus .placeholder {
+					color: green;
+					// border: ;
+				}
+			}
+			.input-name:focus-visible label > .placeholder {
+				background-color: green !important;
+			}
+		}
+		// .input-name-wrapper {
+		// 	.input-name {
+		// 		color: red;
+		// 	}
+		// }
+	}
+}
+// .input-name:focus .placeholder {
+// 	color: red !important;
+// }
