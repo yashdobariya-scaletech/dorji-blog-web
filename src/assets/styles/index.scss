@@ -639,18 +639,22 @@ a {
 .contact-wrapper {
 	.contact-title {
 		font-family: 'Playfair Display';
+		text-align: center;
 	}
 	.contact-form {
 		display: flex;
+		max-width: 550px;
+		width: 100%;
+		margin: 0 auto;
 		.input-name-wrapper,
 		.input-email-wrapper,
 		.input-website-wrapper,
 		.comment-wrapper {
 			width: 100%;
-			max-width: 350px;
-			margin: 20px 0px;
+			margin: 40px 0px 0px;
 			border-radius: 15px;
 			background: #d4dae6;
+			transition-duration: 0.2s;
 
 			input {
 				color: #0f1a2e;
@@ -729,4 +733,13 @@ a {
 			}
 		}
 	}
+}
+.error-message {
+	color: red;
+	font-size: 12px;
+	text-align: start;
+	padding: 0px 16px;
+	width: 100%;
+	margin: 5px 0px 0px 0px;
+	transition-duration: 0.2s;
 }

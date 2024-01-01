@@ -7,7 +7,8 @@ export const API_CONFIG = {
 	path: {
 		categories: 'categories',
 		articles: 'articles',
-		subscribeUsers: 'subscribe-users'
+		subscribeUsers: 'subscribe-users',
+		contactMes: 'contact-mes'
 	}
 };
 

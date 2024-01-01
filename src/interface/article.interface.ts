@@ -70,3 +70,10 @@ interface ArticleInfo {
   id: number;
   attributes: Attributes;
 }
+
+interface UserRegistration{
+  username:string;
+  email:string;
+  website:string;
+  comment:string;
+}
