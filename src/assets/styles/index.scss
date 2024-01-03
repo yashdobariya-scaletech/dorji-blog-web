@@ -640,37 +640,62 @@ a {
 	.contact-title {
 		font-family: 'Playfair Display';
 		text-align: center;
+		color: #0f1a2e;
 	}
 	.contact-form {
 		display: flex;
-		max-width: 550px;
-		width: 100%;
+		background: #f3f4f5;
+		border-radius: 10px;
+		gap: 40px;
+		width: fit-content;
 		margin: 0 auto;
-		.input-name-wrapper,
-		.input-email-wrapper,
+		padding: 40px;
+		.name-wrapper {
+			gap: 40px;
+			width: 100%;
+			.firstName-wrapper,
+			.lastName-wrapper {
+				gap: 10px;
+				width: 50%;
+			}
+		}
+		.contact-email-wrapper {
+			gap: 40px;
+			width: 100%;
+			.email-wrapper,
+			.input-website-wrapper {
+				gap: 10px;
+				width: 50%;
+			}
+		}
+		.comment-wrapper {
+			gap: 10px;
+			width: 100%;
+		}
+
+		.firstName-wrapper,
+		.lastName-wrapper,
+		.email-wrapper,
 		.input-website-wrapper,
 		.comment-wrapper {
-			width: 100%;
-			margin: 40px 0px 0px;
-			border-radius: 15px;
-			background: #d4dae6;
 			transition-duration: 0.2s;
 
 			input {
 				color: #0f1a2e;
 				font-weight: 400;
+				font-size: 14px;
 				padding: 7px 16px;
 				font-family: Open Sans;
+				height: 41px;
 				transition-duration: 0.2s;
 				padding: 7px 16px;
-				background: rgba(255, 255, 255, 0.4);
 				border-radius: 14px;
 				box-shadow: 0px 4px 10px -8px rgba(0, 0, 0, 0.2);
-				border: 0.3px solid transparent;
+				border: 1px solid transparent;
 
 				&:focus {
 					outline: none;
-					border: 0.3px solid #c93e29;
+					border: 1px solid #c93e29;
 				}
 				&:focus + .placeholder,
 				&:not(:placeholder-shown).input-name:not(:focus) ~ label,
@@ -686,26 +711,31 @@ a {
 				}
 			}
 			label {
-				color: #0f1a2e7a;
+				color: #000;
+				width: 100%;
+				font-size: 18px;
 				top: 7px;
-				font-weight: 500;
+				font-weight: 400;
 				transition-duration: 0.3s;
 				font-family: Open Sans;
+				span {
+					color: #c93e29;
+				}
 			}
 			.input-comment {
 				width: 100%;
 				font-family: Open Sans;
-				// max-width: 428px !important;
 				box-shadow: 0px 4px 10px -8px rgba(0, 0, 0, 0.2);
 				border-radius: 15px;
 				color: #0f1a2e;
+				max-width: 740px;
+				font-size: 16px;
 				transition-duration: 0.2s;
 				padding: 7px 16px;
-				background: rgba(255, 255, 255, 0.4);
-				border: 0.3px solid transparent;
+				border: 1px solid transparent;
 				&:focus {
 					outline: none;
-					border: 0.3px solid #c93e29;
+					border: 1px solid #c93e29;
 				}
 				&:focus + .placeholder,
 				&:not(:placeholder-shown).input-comment:not(:focus) ~ label {
@@ -724,22 +754,20 @@ a {
 			.submit-btn {
 				width: 100%;
 				font-family: Open Sans;
-				letter-spacing: 1px;
-				margin: 20px 0px;
-				padding: 10px;
+				padding: 14px 28px;
 				background-color: #c93e29;
 				border-radius: 10px;
+				box-shadow: 0px 4px 10px 0px rgba(201, 62, 41, 0.2);
 				color: #fff;
 			}
 		}
 	}
 }
 .error-message {
-	color: red;
+	color: #c93e29;
 	font-size: 12px;
+	line-height: 12px;
 	text-align: start;
-	padding: 0px 16px;
 	width: 100%;
-	margin: 5px 0px 0px 0px;
 	transition-duration: 0.2s;
 }

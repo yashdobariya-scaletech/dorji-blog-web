@@ -4,169 +4,190 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 
 const ContactMe = () => {
-    const [userRegistration, setUserRegistration] = useState<UserRegistration>({
-        username: '',
-        email: '',
-        website: '',
-        comment: ''
-    } as UserRegistration);
-    const [usernameError, setUsernameError] = useState(false);
-    const [emailError, setEmailError] = useState(false);
-    const [emailInvalidError, setEmailInvalidError] = useState(false);
-    const [commentError, setCommentError] = useState(false);
+	const [userRegistration, setUserRegistration] = useState<UserRegistration>({
+		firstName: '',
+		lastName: '',
+		email: '',
+		website: '',
+		comment: ''
+	} as UserRegistration);
 
-    const userInputData = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const name = event.target.name;
-        const userValue = event.target.value;
+	const [firstNameError, setFirstNameError] = useState(false);
+	const [lastNameError, setLastNameError] = useState(false);
+	const [emailError, setEmailError] = useState(false);
+	const [emailInvalidError, setEmailInvalidError] = useState(false);
+	const [commentError, setCommentError] = useState(false);
 
-        setUserRegistration({ ...userRegistration, [name]: userValue });
-        if (name === 'username') {
-            setUsernameError(false);
-        } else if (name === 'email') {
-            setEmailError(false); // Reset required field error
-            setEmailInvalidError(false); // Reset invalid format error
+	const userInputData = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const name = event.target.name;
+		const userValue = event.target.value;
 
-            if (userValue !== '') {
-                // Only check for validity if not empty
-                if (!isValidEmail(userValue)) {
-                    setEmailInvalidError(true);
-                }
-            }
-        } else if (name === 'comment') {
-            setCommentError(false);
-        }
-        console.log(name, userValue);
-    };
-    function isValidEmail(email: string) {
-        // Regular expression for email validation
-        const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
-        return emailRegex.test(email);
-    }
+		setUserRegistration({ ...userRegistration, [name]: userValue });
+		if (name === 'firstName') {
+			setFirstNameError(false);
+		} else if (name === 'lastName') {
+			setLastNameError(false);
+		} else if (name === 'email') {
+			setEmailError(false); // Reset required field error
+			setEmailInvalidError(false); // Reset invalid format error
 
-    const userSubmitData = (event: any) => {
-        event.preventDefault(); // Prevent default form submission
+			if (userValue !== '') {
+				// Only check for validity if not empty
+				if (!isValidEmail(userValue)) {
+					setEmailInvalidError(true);
+				}
+			}
+		} else if (name === 'comment') {
+			setCommentError(false);
+		}
+	};
 
-        // Validate input fields here
-        if (!userRegistration.username && !userRegistration.email && !userRegistration.comment) {
-            setUsernameError(true);
-            setEmailError(true);
-            setCommentError(true);
+	function isValidEmail(email: string) {
+		// Regular expression for email validation
+		const emailRegex =
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return emailRegex.test(email);
+	}
 
-            // toast.error("Please fill in all required fields.");
-            return;
-        } else if (!userRegistration.username) {
-            setUsernameError(true);
-            // toast.error("Please fill required field")
-        } else if (!userRegistration.comment) {
-            setCommentError(true);
-            // toast.error("Please fill required field")
-        }
-        // else if (!userRegistration.email) {
-        //     setEmailError(true);
-        //     // toast.error("Please fill required field")
-        // }
-        else if (!isValidEmail(userRegistration.email)) {
-            setEmailError(true);
-            // toast.error("Please enter a valid email address.");
-            return;
-        } else {
-            const payload = {
-                data: {
-                    name: userRegistration.username,
-                    email: userRegistration.email,
-                    website: userRegistration.website,
-                    comment: userRegistration.comment
-                }
-            };
-            HttpService.post(API_CONFIG.path.contactMes, payload)
-                .then(() => {
-                    toast.success('Successfully submit');
-                    setUserRegistration({
-                        username: '',
-                        email: '',
-                        website: '',
-                        comment: ''
-                    });
-                })
-                .catch((e) => {
-                    toast.error(e.response.data.error.name);
-                });
-        }
-    };
+	const userSubmitData = (event: any) => {
+		event.preventDefault();
 
-    return (
-        <div className="contact-wrapper mt-165 pb-40 container">
-            <h1 className="contact-title font-size-45">Contact Me</h1>
-            <div className="contact-form pt-40 d-flex flex-direction--column justify-content--center align-items-center">
-                <div className="input-name-wrapper d-flex flex-direction--column position--relative">
-                    <input
-                        placeholder=" "
-                        name="username"
-                        type="text"
-                        className="input-name"
-                        onChange={userInputData}
-                        value={userRegistration.username}
-                        id="username"
-                    />
-                    <label className="placeholder position--absolute top--7 left--16" htmlFor="username">
-                        Name
-                    </label>
-                </div>
-                {usernameError && <p className="error-message">Please fill required field</p>}
-                <div className="input-email-wrapper d-flex flex-direction--column position--relative">
-                    <input
-                        placeholder=" "
-                        name="email"
-                        type="email"
-                        className="input-email"
-                        onChange={userInputData}
-                        value={userRegistration.email}
-                        id="email"
-                    />
-                    <label className="placeholder position--absolute top--7 left--16" htmlFor="email">
-                        Email
-                    </label>
-                </div>
-                {emailError && <p className="error-message">Please fill required field</p>}
-                {emailInvalidError && <p className="error-message">Please enter a valid email address.</p>}
-                <div className="input-website-wrapper d-flex flex-direction--column position--relative">
-                    <input
-                        placeholder=" "
-                        name="website"
-                        type="url"
-                        className="input-website"
-                        onChange={userInputData}
-                        value={userRegistration.website}
-                        id="website"
-                    />
-                    <label className="placeholder position--absolute top--7 left--16" htmlFor="website">
-                        Website
-                    </label>
-                </div>
-                <div className="comment-wrapper d-flex flex-direction--column position--relative">
-                    <textarea
-                        placeholder=" "
-                        name="comment"
-                        className="input-comment"
-                        onChange={userInputData}
-                        value={userRegistration.comment}
-                        id="comment"
-                        rows={10}
-                        cols={100}
-                    ></textarea>
-                    <label className="placeholder position--absolute top--7 left--16" htmlFor="comment">
-                        Comment
-                    </label>
-                </div>
-                {commentError && <p className="error-message">Please fill required field</p>}
-                <div className="submit-wrapper d-flex justify-content--center align-items-center">
-                    <button type="submit" className="submit-btn font-weight--500 font-size-18" onClick={userSubmitData}>
-                        Submit
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
+		// Validate input fields here
+		if (!userRegistration.firstName && !userRegistration.lastName && !userRegistration.email && !userRegistration.comment) {
+			setFirstNameError(true);
+			setEmailError(true);
+			setLastNameError(true);
+			setCommentError(true);
+			return;
+		} else if (!userRegistration.firstName) {
+			setFirstNameError(true);
+		} else if (!userRegistration.lastName) {
+			setLastNameError(true);
+		} else if (!isValidEmail(userRegistration.email)) {
+			setEmailError(true);
+			return;
+		} else if (!userRegistration.comment) {
+			setCommentError(true);
+		} else {
+			const payload = {
+				data: {
+					firstName: userRegistration.firstName,
+					lastName: userRegistration.firstName,
+					email: userRegistration.email,
+					website: userRegistration.website,
+					comment: userRegistration.comment
+				}
+			};
+			HttpService.post(API_CONFIG.path.contactMes, payload)
+				.then(() => {
+					toast.success('Successfully submit');
+					setUserRegistration({
+						firstName: '',
+						lastName: '',
+						email: '',
+						website: '',
+						comment: ''
+					});
+				})
+				.catch((e) => {
+					toast.error(e.response.data.error.name);
+				});
+		}
+	};
+
+	return (
+		<div className="contact-wrapper mt-165 pb-40 container">
+			<h1 className="contact-title font-size-50 font-weight--600 mb-40">Get in touch with me</h1>
+			<div className="contact-form d-flex flex-direction--column justify-content--center align-items-center">
+				<div className="name-wrapper d-flex">
+					<div className="firstName-wrapper d-flex flex-direction--column position--relative">
+						<label className="placeholder" htmlFor="firstName">
+							First Name <span>*</span>
+						</label>
+						<input
+							placeholder="Your name"
+							name="firstName"
+							type="text"
+							className="input-name"
+							onChange={userInputData}
+							value={userRegistration.firstName}
+							id="firstName"
+						/>
+						{firstNameError && <p className="error-message">Please fill required field</p>}
+					</div>
+					<div className="lastName-wrapper d-flex flex-direction--column position--relative">
+						<label className="placeholder" htmlFor="lastName">
+							Last Name <span>*</span>
+						</label>
+						<input
+							placeholder="Your surname"
+							name="lastName"
+							type="text"
+							className="input-name"
+							onChange={userInputData}
+							value={userRegistration.lastName}
+							id="lastName"
+						/>
+						{lastNameError && <p className="error-message">Please fill required field</p>}
+					</div>
+				</div>
+				<div className="contact-email-wrapper d-flex">
+					<div className="email-wrapper d-flex flex-direction--column position--relative">
+						<label className="placeholder" htmlFor="email">
+							Email <span>*</span>
+						</label>
+						<input
+							placeholder="Your email"
+							name="email"
+							type="email"
+							className="input-email"
+							onChange={userInputData}
+							value={userRegistration.email}
+							id="email"
+						/>
+						{emailError && <p className="error-message">Please fill required field</p>}
+						{emailInvalidError && <p className="error-message">Please enter a valid email address.</p>}
+					</div>
+					<div className="input-website-wrapper d-flex flex-direction--column position--relative">
+						<label className="placeholder" htmlFor="website">
+							Contact No.
+						</label>
+						<input
+							placeholder="Your contact number"
+							name="website"
+							type="number"
+							className="input-website"
+							onChange={userInputData}
+							value={userRegistration.website}
+							id="website"
+						/>
+					</div>
+				</div>
+
+				<div className="comment-wrapper d-flex flex-direction--column position--relative">
+					<label className="placeholder" htmlFor="comment">
+						Share your thoughts <span>*</span>
+					</label>
+					<textarea
+						placeholder="Message"
+						name="comment"
+						className="input-comment"
+						onChange={userInputData}
+						value={userRegistration.comment}
+						id="comment"
+						rows={7}
+						cols={100}
+					></textarea>
+					{commentError && <p className="error-message">Please fill required field</p>}
+				</div>
+				<div className="submit-wrapper d-flex justify-content--center align-items-center">
+					<button type="submit" className="submit-btn font-weight--600 font-size-16" onClick={userSubmitData}>
+						Send Message
+					</button>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default ContactMe;

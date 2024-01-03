@@ -72,7 +72,8 @@ interface ArticleInfo {
 }
 
 interface UserRegistration{
-  username:string;
+  firstName:string;
+  lastName:string;
   email:string;
   website:string;
   comment:string;

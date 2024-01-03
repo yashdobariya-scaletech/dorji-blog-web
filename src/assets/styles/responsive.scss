@@ -268,6 +268,26 @@
 			}
 		}
 	}
+	.contact-wrapper {
+		.contact-title {
+		}
+		.contact-form {
+			.name-wrapper {
+				flex-direction: column;
+				.firstName-wrapper,
+				.lastName-wrapper {
+					width: 100%;
+				}
+			}
+			.contact-email-wrapper {
+				flex-direction: column;
+				.email-wrapper,
+				.input-website-wrapper {
+					width: 100%;
+				}
+			}
+		}
+	}
 }
 
 @media only screen and (max-width: 426px) {
@@ -474,6 +494,13 @@
 		align-items: center;
 		gap: 10px;
 		flex-direction: column;
+	}
+	.contact-wrapper {
+		.contact-title {
+		}
+		.contact-form {
+			padding: 20px;
+		}
 	}
 }
 
