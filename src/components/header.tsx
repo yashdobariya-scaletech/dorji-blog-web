@@ -201,9 +201,9 @@ const Header = () => {
 					</div>
 				</div>
 			</header>
-			{sideNav && (<div className=" sidenav-mobile-wrapper animate-opacity d-flex justify-content-end position--fixed top--0 right--0">
-				<div className="sidenav animate-sidenav" >
-					<div className="close-icon-wrapper position--absolute top--20 right--20"
+			<div className={`sidenav-mobile-wrapper d-flex justify-content-end position--fixed top--0 right--0 ${sideNav ? 'sideNav-expand' : 'sideNav-collapsed'}`}>
+				<div className={`sidenav position--relative ${sideNav ? 'sideNav-width--100' : 'sideNav-width--0'}`} >
+					<div className={`close-icon-wrapper position--absolute top--20 right--20 ${sideNav ? '' : 'display-none'}`}
 						onClick={() => setSideNav(false)}>
 						<CloseIcon />
 					</div>
@@ -222,7 +222,7 @@ const Header = () => {
 						</li>
 					</ul>
 				</div>
-			</div>)}
+			</div>
 		</>
 	);
 };
